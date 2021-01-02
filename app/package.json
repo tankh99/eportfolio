@@ -1,0 +1,75 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.3.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/aphrodite": "^2.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.11",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/react-slick": "^0.23.4",
+    "@types/react-typist": "^2.0.1",
+    "@types/yup": "^0.29.10",
+    "antd": "^4.9.1",
+    "aphrodite": "^2.4.0",
+    "aphrodite-jss": "^2.1.0",
+    "axios": "^0.21.0",
+    "formik": "^2.2.5",
+    "framer-motion": "^2.9.5",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hexagon": "^1.1.3",
+    "react-image": "^4.0.3",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-scroll-parallax": "^2.3.5",
+    "react-slick": "^0.27.13",
+    "react-typist": "^2.0.5",
+    "redux": "^4.0.5",
+    "slick-carousel": "^1.8.1",
+    "typescript": "^4.0.3",
+    "use-is-in-viewport": "^1.0.9",
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.15.0",
+    "eslint-plugin-react": "^7.21.5"
+  }
+}

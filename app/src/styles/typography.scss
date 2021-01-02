@@ -1,0 +1,80 @@
+@import './theme.scss';
+
+:root{
+    --page-title: 36px;
+    --title: 28px;
+    // --subtitle: 
+}
+
+div, p{
+    color: #ccc;
+}
+
+p{
+    line-height: 2em;
+    font-size: 18px;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color: "black"
+}
+
+.hero{
+    font-size:48px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+
+.section-header{
+    // text-transform:uppercase;
+    line-height:3.5em;
+}
+
+
+.page-title, h1 {
+    font-size: var(--page-title);
+    font-weight: bold
+}
+.title, h2 {
+    font-size: var(--title);
+    line-height: 2.5em;
+}
+
+.subtitle, h6{
+    // font-size: var(--subtitle);
+    color: rgba(255,255,255,0.7);
+    font-size: 24px;
+}
+
+.link {
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    &:hover{
+        color: rgba(255,255,255,1);
+    }
+}
+
+.link a:hover{
+    color: white;
+}
+
+.centered-text{
+    text-align:center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.translucent{
+    color: rgba(255,255,255,0.7);
+}

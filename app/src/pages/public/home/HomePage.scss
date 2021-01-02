@@ -1,0 +1,27 @@
+.shape-container{
+    position: relative;
+}
+
+.pill-shape{
+    width: 100px;
+    height: 200px;
+    border-radius: 100px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+}
+
+.yellow{
+    background: rgb(248, 255, 83);
+    transform: rotate(45deg);
+}
+
+.pink{
+    background: rgb(255, 60, 240);
+    transform: rotate(150deg);
+}
+
+.cyan{
+    background: rgb(83, 235, 255);
+}
