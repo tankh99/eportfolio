@@ -117,6 +117,5 @@ export const routineReminder: Project = {
 export default {
     chatApp,
     fwd,
-    golunch,
-    routineReminder
+    golunch
 }
