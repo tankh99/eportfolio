@@ -40,6 +40,7 @@
     "react-transition-group": "^4.4.1",
     "react-typist": "^2.0.5",
     "redux": "^4.0.5",
+    "serve": "^11.3.2",
     "slick-carousel": "^1.8.1",
     "typescript": "^4.0.3",
     "use-is-in-viewport": "^1.0.9",
@@ -47,10 +48,12 @@
     "yup": "^0.32.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
