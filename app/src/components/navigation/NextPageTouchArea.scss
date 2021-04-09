@@ -14,15 +14,16 @@
 
     &:hover {
 
-        // background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.05);
     }
 }
 
 
 .horizontal {
-    top: 0;
-    width: 120px;
-    height: 100vh;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 20vh;
 }
 
 
@@ -46,6 +47,7 @@
 .direction-icon-text{
     opacity: 0;
     transition: 0.4s;
+    text-align: center;
 }
 
 .bottom {

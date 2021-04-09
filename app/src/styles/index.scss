@@ -1,4 +1,8 @@
 @import '~antd/dist/antd.css';
+@import "./components.scss";
+@import "./layout.scss";
+@import "./typography.scss";
+@import "./theme.scss";
 
 body {
   margin: 0;
@@ -12,7 +16,7 @@ body {
 }
 
 img {
-  width: 100%;
+  
 }
 
 .show {
@@ -24,24 +28,14 @@ img {
 }
 
 .main{
-  padding-top: var(--navbar-height);
+  // padding-top: var(--navbar-height);
   background-image: url("../assets/images/background.png");
   background-size: contain;
   cursor: default;
   width: 100%;
-  padding-bottom: 50px;
   min-height: 100vh;
   
 }
-
-a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none !important;
-  &:hover{
-    color: rgba(255,255,255,1) !important;
-  }
-}
-
 .relative {
   position: relative;
 }

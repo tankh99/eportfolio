@@ -1,11 +1,10 @@
-import * as projects from '../../constants/projects';
+import projects from '../../constants/projects';
 import { SET_ACTIVE_INDEX } from '../actions/projectActions';
 
 const initialState = {
-    projects: [projects.eformbuilder, projects.golunch],
+    projects: Object.values(projects),
     activeIndex: -1
 }
-
 
 export default (state = initialState, action: any) => {
     switch(action.type){

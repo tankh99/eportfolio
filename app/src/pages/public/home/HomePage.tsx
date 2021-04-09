@@ -13,7 +13,7 @@ export default function HomePage(){
     return (
         <div>
             <LandingPageSection/>
-            <NextPageTouchArea to={"/work"}/>
+            {/* <NextPageTouchArea to={"/work"}/> */}
         </div>
     )
 }

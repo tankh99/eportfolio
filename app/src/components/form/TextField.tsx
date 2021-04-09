@@ -3,7 +3,7 @@ import FormFieldProps from './FormFieldProps'
 import {Input} from 'antd'
 
 interface P extends FormFieldProps {
-
+    [x:string]: any
 }
 
 export default function TextField(props: P) {

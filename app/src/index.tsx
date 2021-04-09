@@ -3,14 +3,21 @@ import ReactDOM from 'react-dom';
 import './styles/index.scss';
 import './styles/typography.scss'
 import './styles/layout.scss'
-import "../node_modules/slick-carousel/slick/slick.css"; 
-import "../node_modules/slick-carousel/slick/slick-theme.css";
+import './styles/typography.scss';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider as StoreProvider} from 'react-redux'
+import {store} from './store/store';
+import {ParallaxProvider } from 'react-scroll-parallax';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider store={store}>
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

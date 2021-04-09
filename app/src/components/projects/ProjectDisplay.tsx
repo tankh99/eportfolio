@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { Col } from 'antd';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
@@ -14,18 +15,14 @@ interface P {
 export const ProjectDisplay = (props: P) => {
 
     const {project} = props;
-    const {title, source} = project
+    const {title, thumbnail, images, stack} = project
 
-    const [image, setImage] = useState(undefined);
-    const [animated, setAnimated] = useState(true);
-
+    const stackString = stack.join(", ")
+    const [image, setImage] = useState("");
         
     useEffect(() => {
-        loadImage(source)
-        .then((image: any) => {
-
-            setImage(image);
-        })
+        const imageToImport = thumbnail || images[0]
+        setImage(require(`assets/images/${imageToImport}`).default)
     },[])
 
 
@@ -33,15 +30,15 @@ export const ProjectDisplay = (props: P) => {
         
         projectImage: {
             // backgroundImage: `url(${image})`,
-            "&::after": {
-                content: `'${title}'`,
-                display: "none",
-                color: "white",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)"
-            }
+            // "&::after": {
+            //     content: `'${title}'`,
+            //     display: "none",
+            //     color: "white",
+            //     position: "absolute",
+            //     top: "50%",
+            //     left: "50%",
+            //     transform: "translate(-50%, -50%)"
+            // }
         }
     })
     
@@ -54,6 +51,10 @@ export const ProjectDisplay = (props: P) => {
             <div
                 className={`project-image ${css(styles.projectImage)}`}
                 style={{backgroundImage: `url(${image})`}}></div>
+            <div className="project-overlay">
+                <h3 className="project-overlay-title">{title}</h3>
+                <p className="project-overlay-subtitle">{stackString}</p>
+            </div>
         </motion.div>
     )
 }

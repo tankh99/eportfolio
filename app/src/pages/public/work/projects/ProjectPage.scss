@@ -1,0 +1,35 @@
+.project-page-title {
+    font-size: 48px;
+}
+
+.project-page-title-container{
+    // padding: 64px 0 0 0;
+    padding-top: 90px;
+}
+
+.project-page-image {
+    // height: 85vh;
+    object-fit: cover;
+    object-position: 0 0;
+}
+// overriding react-responsive-carousel styles
+.slide-image{
+    height: 100%;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.thumb{
+    border: 3px solid transparent !important;
+}
+
+.thumb:hover, .thumb.selected{
+    border: 3px solid #fff !important;
+}
+
+.carousel.slide img, .carousel img{
+    width:unset !important;
+    max-width: 100%;
+    margin: 0 auto;
+}
+

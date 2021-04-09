@@ -8,6 +8,11 @@
         transform: scale(1.2);
     };
 
+    &:hover .project-overlay{
+        // display: block;
+        visibility: visible;
+    }
+
     &:hover .project-image:before,
     &:focus .project-image:before{
         visibility: visible;
@@ -24,11 +29,10 @@
 .project-image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: 0 0;
     cursor:pointer;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 50% 50%;
     transition:all 0.4s;
     background-color: gray;
     // background-image: url(../../assets/images/projects/golunch/golunch-home.png),
@@ -48,6 +52,26 @@
 
 }
 
+.project-overlay{
+    // display:none;
+    visibility: hidden;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // transition: 0.4s;
+    text-align: center;
+}
+
+.project-overlay-title{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.project-overlay-subtitle{
+    // font-size: 0.8em;
+}
 // .project-image::after{
 //     display: none;
 //     content: "Golunch";

@@ -10,54 +10,52 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setActiveIndexAction } from '../../../../store/actions/projectActions';
 import Slider from 'react-slick';
 import "./ProjectsSection.scss";
-import ProjectSlide from '../../../../components/projects/ProjectSlide';
 import {ProjectDisplay} from '../../../../components/projects/ProjectDisplay';
 import { Col, Row } from 'antd';
 import { Delay } from '../../../../components/Delay';
 import { Link } from 'react-router-dom';
+import { getNameFromPath } from 'utils/utils';
 
 export default function ProjectsSection(){
     const [isInViewport, targetRef] = useIsInViewport();
     // loads the animation once and only once
     const [loaded, setLoaded] = useState(isInViewport);
-
+    const projects = useSelector((state: any) => state.projects).projects;
+    
     useEffect(() => {
         if(isInViewport){
             setLoaded(true);
         }
     }, [isInViewport])
-
-    const settings = {
-        dots: true,
-        speed: 500,
-        className: "custom-slick-slide",
-        
-    }
     
     return(
         <PageSection padded>
             <div ref={targetRef} className="section-header">projects</div>
-                {/* Project Links */}
-                <Row gutter={[24, 24]}>
-                    <Col sm={24} md={12} lg={8}>
-                        <Project index={0} 
-                            project={projects.golunch}/>
-                    </Col>
-                    <Col sm={24} md={12} lg={8}>
-                        <Project index={1} 
-                            project={projects.eformbuilder}/>
-                    </Col>
-                </Row>
+            {/* Project Links */}
+            <Row gutter={[24, 24]}>
+                {projects && projects.map((project: any, index: number) => {
+                    return (
+                        <Col sm={24} md={12} lg={8} key={index} className="col">
+                            <Project index={index} 
+                                project={project}/>
+                        </Col>
+                    )
+                })}
+            </Row>
         </PageSection>
     )
 }
 
 const Project = ({index, project}: any) => {
-
+    // console.log((index + 1) * 300)
+    // console.log(project)
     return (
 
-        <Link to={project.slug}>
-            <Delay delay={(index + 1) * 300}>
+        <Link to={{
+            pathname: project.slug,
+            state: {prevPath: getNameFromPath(window.location.pathname)}
+        }}>
+            <Delay delay={(index + 1) * 250}>
                 <ProjectDisplay project={project}/>
             </Delay>
         </Link>
