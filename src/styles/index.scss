@@ -43,3 +43,16 @@ img {
 .back-button {
   
 }
+
+.image-label{
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8em;
+  margin: 10px 0 20px 0;
+}
+.centered-image-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

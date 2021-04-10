@@ -3,7 +3,7 @@ import { StyleSheet, css } from 'aphrodite-jss';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
-import PageRoot from '../../../../components/layout/PageLayout';
+import PageRoot from '../../../../components/layout/PageRoot';
 import NextPageTouchArea from '../../../../components/navigation/NextPageTouchArea';
 import PageSection from '../../../../components/PageSection';
 import { isMobileDevice, loadImage } from '../../../../constants/global';

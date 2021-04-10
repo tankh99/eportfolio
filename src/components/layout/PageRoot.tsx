@@ -1,14 +1,15 @@
 import React from 'react';
 
 interface P {
+    padded?: boolean,
     className?: any
     children: any
 }
 
 const PageRoot = (props: P) => {
-    const {className, children} = props
+    const {padded, className, children} = props
     return (
-        <div className={`page ${className}`}>
+        <div className={`${padded ? 'fully-padded' : 'page'} ${className ? className : ''}`}>
             {props.children}
         </div>
 

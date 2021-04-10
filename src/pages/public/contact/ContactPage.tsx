@@ -1,4 +1,4 @@
-import PageRoot from 'components/layout/PageLayout';
+import PageRoot from 'components/layout/PageRoot';
 import PageSection from 'components/PageSection';
 import React from 'react';
 

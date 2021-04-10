@@ -92,7 +92,9 @@ export const golunch: Project = {
     title: "GoLunch",
     tagline: "Walk & Earn",
     description: {__html:
-        `GoLunch was my final-year project, done in July 2019. It was a special project not only because it was my first client project, but because this was a first-ever joint-collaboration between Singapore Polytechnic and theFIRMA, a university based in Finland. The project’s client was Kupittaan Paviljonki, a Finland-based restaurant, and they wanted a web-based tracking app that customers could access anywhere and track the distance walked to and fro their restaurants to provide discounts for customers.`
+        `GoLunch was my final-year project, done in July 2019. It was a special project not only because it was my first client project, but because this was a first-ever joint-collaboration between Singapore Polytechnic and theFIRMA, a university based in Finland. The project’s client was Kupittaan Paviljonki, a Finland-based restaurant, and they wanted a web-based tracking app that customers could access anywhere and track the distance walked to and fro their restaurants to provide discounts for customers. <br/><br/>
+        We used web3.js to store the distance tracked, and perform transactions whenever the user gains more points, or decides to redeem his points. This was also a submission for PolyFintech100 API Hackathon.
+        `
     },
     stack: ["React", "Express", "MySQL", "web3.js (Blockchain)"],
     challenges: {__html: `There was a lot of confusion during the initial phase of the project as the app that the client wanted pointed towards a native mobile app. Our group began learning React Native, but by the time the client clarified that he wanted a Progressive Web App, we had wasted 1-2 weeks. 
@@ -108,14 +110,25 @@ export const routineReminder: Project = {
     title: "Routine Reminder",
     tagline: "Discipline yourself",
     description: {__html: ``},
-    stack: ["React Native"],
-    challenges: {__html: `There was a lot of confusion during the initial phase of the project as the app that the client wanted pointed towards a native mobile app. Our group began learning React Native, but by the time the client clarified that he wanted a Progressive Web App, we had wasted 1-2 weeks. 
-    <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `}
+    stack: ["Expo, React Native"],
+    challenges: {__html: ``}
 }
 
+const aivinId = "AIvin"
+export const aivin: Project = {
+    id: aivinId,
+    images: ["projects/AIvin/AIvin-logo.png"],
+    slug: `${BASE_URL}/${aivinId}`,
+    title: "AIvin",
+    tagline: "Submission for SurpriseHacks 2021",
+    description: {__html: `https://www.youtube.com/watch?v=s4evmpyF7Dg&feature=emb_title AIvin is a simple chatbot built with Expo`},
+    stack: ["Expo", "React Native", "react-native-gifted-chat", "expo-av", "expo-speech"]
+
+}
 // order of projects depends on ordering here
 export default {
     chatApp,
     fwd,
-    golunch
+    golunch,
+    aivin
 }
