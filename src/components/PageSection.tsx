@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     fitScreen: {
-        minHeight: "100vh"
+        minHeight: "calc(100vh - 44px)"
     },
     lastSection: {
         paddingBottom: "90px",

@@ -30,11 +30,11 @@
     width: 100%;
     height: 100%;
     cursor:pointer;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     transition:all 0.4s;
-    background-color: gray;
+    background-color: white;
     // background-image: url(../../assets/images/projects/golunch/golunch-home.png),
     
 }

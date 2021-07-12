@@ -11,8 +11,9 @@ import { Project } from '../../../../constants/projects';
 import "./ProjectPage.scss"
 import * as routes from '../../../../constants/routes';
 import TopLeftAction from 'components/layout/top-left-action/TopLeftAction';
-import { Col, Row } from 'antd';
+import { Col, Row, Tag } from 'antd';
 import { Carousel } from 'react-responsive-carousel';
+import ReactPlayer from 'react-player';
 
 
 export default function ProjectPage(){
@@ -32,8 +33,42 @@ export default function ProjectPage(){
     //     history.push(routes.WORK_PATH);
     // }
 
+    const customRenderItem = (item: any, props: any) => {
+        if(item){
+            const Element = item.type
+            return <Element {...item.props} {...props} />
+        } else{
+            return false
+        }
+    }
+
+    const getVideoThumb = (videoId: string) => ` http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+    // http://i3.ytimg.com/vi/s4evmpyF7Dg/hqdefault.jpg
+    const getVideoId = (url: string) => {
+        return url.substr('https://youtu.be/'.length, url.length);
+    }
+
+    const customRenderThumb = (children: any) =>{
+        const mappedThumbs: any = []
+        children.map((item: any, index: number) => {
+            if(item){
+                if(item.length){
+                    const items = item.map((image: any, index: number) => {
+                        mappedThumbs.push(<img key={index} src={image.props.children.props.src}/>)
+                    })
+                    return items
+                } else if(item.props.url) {
+                    const videoId = getVideoId(item.props.url);
+                    mappedThumbs.push(<img key={index} src={getVideoThumb(videoId)} />)
+                }
+            }
+            
+        });
+        return mappedThumbs
+    }
     
-    const {title, tagline, description, images, stack, challenges} = project
+    
+    const {title, tagline, description, images, stack, challenges, videoLink, isMobile} = project
     const sectionStyle = isMobileDevice() ? styles.mobileProjectPageSection : styles.desktopProjectPageSection
     return (
         <PageRoot>
@@ -47,15 +82,23 @@ export default function ProjectPage(){
                 </div>
             </PageSection>
             <PageSection customStyles={sectionStyle} >
-                <Carousel>
-                {images && images.map((image: any, index: number) => {
-                    return (
-                        <div key={index} 
-                            className="slide-image">
-                            <img src={require(`assets/images/${image}`).default} className="project-page-image" alt="page image"/>
-                        </div>
-                    )
-                })}
+                <Carousel 
+                    renderItem={customRenderItem}
+                    renderThumbs={customRenderThumb}>
+                        {/* {videoLink &&
+                            <YoutubeSlide 
+                            key={"video"}
+                            url={videoLink}/>
+                        } */}
+                        {images && images.map((image: any, index: number) => {
+                            return (
+                                <div key={index} 
+                                    className="slide-image">
+                                    <img src={require(`assets/images/${image}`).default} 
+                                    className={`project-page-image ${isMobile ? 'mobile-slide-image' : ''}`} alt="page image"/>
+                                </div>
+                            )
+                        })}
                 </Carousel>
             </PageSection>
             <PageSection customStyles={sectionStyle} >
@@ -64,16 +107,24 @@ export default function ProjectPage(){
             </PageSection>
             <PageSection customStyles={sectionStyle} >
                 <h2>Technology Stack</h2>
-                <p>Technologies involved during this project</p>
-                <ul>
+                {/* <p>Technologies involved during this project</p> */}
                 {stack && stack.map((item: any, index: number) => {
+                    
                     return (
-                    <li key={index}>{item}</li>   
+                        <Tag color={""} key={index}>{item}</Tag>
                     )
                 })}
-                </ul>
             </PageSection>
         </PageRoot>
+    )
+}
+
+const YoutubeSlide = ({url}: any) => {
+    return (
+        <ReactPlayer 
+            className="video-slide"
+            width="100%" 
+            url={url}/>
     )
 }
 

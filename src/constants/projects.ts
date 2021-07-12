@@ -10,7 +10,9 @@ export interface Project {
     images?: string[],
     stack: string[],
     challenges?: any,
-    achievements?: string
+    achievements?: string,
+    videoLink?: string,
+    isMobile?: boolean
 }
 
 const BASE_URL = "/work" 
@@ -19,7 +21,7 @@ const chatAppId = "chat-app"
 export const chatApp: Project= {
     id: chatAppId,
     title: "Chat App",
-    thumbnail: `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
+    thumbnail: `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-1.png`,
     slug: `${BASE_URL}/${chatAppId}`,
     description: {__html: `This was a simple project intended to facilitate my understanding of socket.io.`},
     images: [
@@ -38,7 +40,7 @@ export const chatApp: Project= {
 const fwdId = "fwd"
 export const fwd: Project = {
     id: fwdId,
-    thumbnail: `${BASE_PROJECT_URL}/${fwdId}/fwd-forms-add.png`,
+    thumbnail: `${BASE_PROJECT_URL}/${fwdId}/fwd-submit-forms.png`,
     images: [
         `${BASE_PROJECT_URL}/${fwdId}/fwd-login.png`,
         `${BASE_PROJECT_URL}/${fwdId}/fwd-admindashboard.png`,
@@ -54,10 +56,10 @@ export const fwd: Project = {
         
     ],
     slug: `${BASE_URL}/${fwdId}`,
-    title: "Form Designer",
+    title: "E-Form Designer",
     tagline: "Build Forms easily",
     description: {__html: 
-        `Form Designer was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner, Natalie designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using SCRUM framework.
+        `E-Form Designer was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner, Natalie designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using SCRUM framework.
         <br/><br/>
         The project was initially a 2-month project and had workflows included in its project specifications, however, was cut down so that we could help work on applications that CSIT were currently using. We consistently engaged in discussions improve on certain features and consulted our mentor on topics we were unsure of.`
     },
@@ -117,18 +119,48 @@ export const routineReminder: Project = {
 const aivinId = "AIvin"
 export const aivin: Project = {
     id: aivinId,
-    images: ["projects/AIvin/AIvin-logo.png"],
+    videoLink: "https://youtu.be/s4evmpyF7Dg",
+    images: [
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-welcome.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-chat-1.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-chat-2.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-call-1.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-call-2.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/aivin-call-accepted-2.jpg`,
+        `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
+    ],
     slug: `${BASE_URL}/${aivinId}`,
     title: "AIvin",
-    tagline: "Submission for SurpriseHacks 2021",
-    description: {__html: `https://www.youtube.com/watch?v=s4evmpyF7Dg&feature=emb_title AIvin is a simple chatbot built with Expo`},
-    stack: ["Expo", "React Native", "react-native-gifted-chat", "expo-av", "expo-speech"]
-
+    tagline: "Your everyday chatbot",
+    description: {__html: `AIvin is a simple chatbot built with Expo`},
+    stack: ["Expo", "React Native", "react-native-gifted-chat", "expo-av", "expo-speech"],
+    isMobile: true
 }
+
+const timezonifyId = "timezonify"
+export const timezonify: Project = {
+    id: timezonifyId,
+    thumbnail: `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-web-thumbnail.png`,
+    images: [
+        `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-converting.jpg`,
+        `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-converted.jpg`,
+        `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-convert-time.jpg`,
+    ],
+    slug: `${BASE_URL}/${timezonifyId}`,
+    title: "Timezonify",
+    tagline: "Converting timezones with a click",
+    description: {__html: `
+        Makes all timings local. Simply click on the Timezonify button after opening the extension popup and Voila. 
+        You can also convert timezones using the popup window without having to Google it
+    `},
+    stack: ["Javascript", "Web Extension"]
+}
+
 // order of projects depends on ordering here
 export default {
-    chatApp,
-    fwd,
     golunch,
-    aivin
+    fwd,
+    timezonify,
+    aivin,
+    chatApp,
 }

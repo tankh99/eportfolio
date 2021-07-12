@@ -11,6 +11,7 @@ import WorkPage from './work/WorkPage';
 import ProjectPage from './work/projects/ProjectPage';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './PageTransition.scss';
+import Footer from 'components/layout/footer/Footer';
 
 // const routes = [
 //     {path: paths.HOME_PATH, name: "Home", Component: HomePage},
@@ -41,6 +42,7 @@ export default function PublicLayout(){
                                 <NotFoundPage/>
                             </Route>
                         </Switch>
+                        <Footer/>
                     </div>
                 </CSSTransition>
             </TransitionGroup>
