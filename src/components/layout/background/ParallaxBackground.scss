@@ -1,11 +1,18 @@
 .background{
     // background-image: url(../../../assets/images/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     position: fixed !important;
     z-index: -1;
     top: 0;
     left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
+    // background-color: black;
+}
+.parallax-background{
+    position: fixed;
+    // height: 100%;
+    // width: 100%;
+    top: -500px;
 }

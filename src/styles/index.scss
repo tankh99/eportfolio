@@ -4,6 +4,10 @@
 @import "./typography.scss";
 @import "./theme.scss";
 
+html, body, #root, #app, #app>div {
+  height: 100%
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -29,7 +33,8 @@ img {
 
 .main{
   // padding-top: var(--navbar-height);
-  background-image: url("../assets/images/background.png");
+  // background-image: url("../assets/images/background.png"); 
+  // let the background repet
   background-size: contain;
   cursor: default;
   width: 100%;

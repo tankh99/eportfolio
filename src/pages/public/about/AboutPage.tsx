@@ -1,12 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import PageRoot from 'components/layout/PageRoot';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NextPageTouchArea from '../../../components/navigation/NextPageTouchArea';
 import * as paths from '../../../constants/routes'
 import {Col, Image, Row} from 'antd';
+import { setBackgroundHeight } from 'store/actions/uiActions';
 
 export default function AboutPage(){
+
+    useEffect(() => {
+        setBackgroundHeight("400vh")    
+    }, [])
     return (
         <PageRoot padded>
             <h1>I design, develop and do it all again</h1>

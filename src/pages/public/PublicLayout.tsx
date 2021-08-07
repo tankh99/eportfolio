@@ -12,6 +12,12 @@ import ProjectPage from './work/projects/ProjectPage';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './PageTransition.scss';
 import Footer from 'components/layout/footer/Footer';
+import smallSquares from '../../assets/images/Small-Squares.png'
+import mediumSquares from '../../assets/images/Medium-Squares.png'
+import largeSquares from '../../assets/images/Large-Squares.png'
+import ParallaxBackground from 'components/layout/background/ParallaxBackground';
+import { useSelector } from 'react-redux';
+import { ParallaxBanner } from 'react-scroll-parallax';
 
 // const routes = [
 //     {path: paths.HOME_PATH, name: "Home", Component: HomePage},
@@ -22,9 +28,30 @@ import Footer from 'components/layout/footer/Footer';
 
 export default function PublicLayout(){
     const location: any = useLocation();
+    const backgroundHeight = useSelector((state: any) => state.ui.backgroundHeight)
+
     return(
         <>
+            {/* <ParallaxBanner
+                layers={[
+                    {
+                        image: smallSquares,
+                        amount: 0.3
+                    },
+                    {
+                        image: mediumSquares,
+                        amount: 0.2
+                    },
+                    {
+                        image: largeSquares,
+                        amount: 0.1
+                    }
+                ]}/> */}
+            <ParallaxBackground image={smallSquares} intensity={0.3}/>
+            <ParallaxBackground image={mediumSquares} intensity={0.2}/>
+            <ParallaxBackground image={largeSquares} intensity={0.1}/>
             <Navbar/>
+            
             <TransitionGroup>
                 <CSSTransition 
                     key={location.key}
@@ -42,7 +69,7 @@ export default function PublicLayout(){
                                 <NotFoundPage/>
                             </Route>
                         </Switch>
-                        <Footer/>
+                        {/* <Footer/> */}
                     </div>
                 </CSSTransition>
             </TransitionGroup>
