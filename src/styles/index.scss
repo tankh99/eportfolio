@@ -33,9 +33,9 @@ img {
 
 .main{
   // padding-top: var(--navbar-height);
-  // background-image: url("../assets/images/background.png"); 
+  background-image: url("../assets/images/background.png"); 
   // let the background repet
-  background-size: contain;
+  background-size: cover;
   cursor: default;
   width: 100%;
   min-height: 100vh;

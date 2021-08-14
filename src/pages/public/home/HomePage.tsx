@@ -5,6 +5,7 @@ import LandingPageImage from '../../../assets/images/laptop-code.jpg'
 import HomeIntroSection from './sections/HomeIntroSection';
 import LandingPageSection from './sections/LandingPageSection';
 import ParallaxBackground from 'components/layout/background/ParallaxBackground';
+import {motion} from 'framer-motion'
 
 export default function HomePage(){
     

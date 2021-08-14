@@ -7,15 +7,16 @@ import { hoverScaleAnimation, slideUpAnimation } from '../../constants/animation
 import {StyleSheet, css} from 'aphrodite-jss';
 import './ProjectDisplay.scss'
 import { loadImage } from '../../constants/global';
+import { Project } from 'constants/projects';
 
 interface P {
-    project: any
+    project: Project
 }
 
 export const ProjectDisplay = (props: P) => {
 
     const {project} = props;
-    const {title, thumbnail, images, stack} = project
+    const {title, thumbnail, images, stack, expanded} = project
 
     const stackString = stack.join(", ")
     const [image, setImage] = useState("");
@@ -50,7 +51,7 @@ export const ProjectDisplay = (props: P) => {
             variants={slideUpAnimation.item}>
             <div
                 className={`project-image ${css(styles.projectImage)}`}
-                style={{backgroundImage: `url(${image})`}}></div>
+                style={{backgroundImage: `url(${image})`, backgroundSize: `${expanded ? "cover" : "contain"}`}}></div>
             <div className="project-overlay">
                 <h3 className="project-overlay-title">{title}</h3>
                 <p className="project-overlay-subtitle">{stackString}</p>

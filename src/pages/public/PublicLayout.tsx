@@ -32,24 +32,9 @@ export default function PublicLayout(){
 
     return(
         <>
-            {/* <ParallaxBanner
-                layers={[
-                    {
-                        image: smallSquares,
-                        amount: 0.3
-                    },
-                    {
-                        image: mediumSquares,
-                        amount: 0.2
-                    },
-                    {
-                        image: largeSquares,
-                        amount: 0.1
-                    }
-                ]}/> */}
-            <ParallaxBackground image={smallSquares} intensity={0.3}/>
+            {/* <ParallaxBackground image={smallSquares} intensity={0.3}/>
             <ParallaxBackground image={mediumSquares} intensity={0.2}/>
-            <ParallaxBackground image={largeSquares} intensity={0.1}/>
+            <ParallaxBackground image={largeSquares} intensity={0.1}/> */}
             <Navbar/>
             
             <TransitionGroup>

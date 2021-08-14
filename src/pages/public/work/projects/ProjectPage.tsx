@@ -85,11 +85,11 @@ export default function ProjectPage(){
                 <Carousel 
                     renderItem={customRenderItem}
                     renderThumbs={customRenderThumb}>
-                        {/* {videoLink &&
+                        {videoLink &&
                             <YoutubeSlide 
                             key={"video"}
                             url={videoLink}/>
-                        } */}
+                        }
                         {images && images.map((image: any, index: number) => {
                             return (
                                 <div key={index} 
