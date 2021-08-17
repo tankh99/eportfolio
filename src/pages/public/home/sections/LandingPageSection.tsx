@@ -71,6 +71,7 @@ export default function LandingPageSection(){
                     </Col>
                 </Row>
                 <motion.div
+                    className="main-button-container"
                     initial={"hidden"}
                     animate={finishTyping ? "visible" : "hidden"}
                     variants={fadeInAnimation.item}
