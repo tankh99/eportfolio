@@ -40,7 +40,7 @@ export const chatApp: Project= {
 const fwdId = "fwd"
 export const fwd: Project = {
     id: fwdId,
-    thumbnail: `${BASE_PROJECT_URL}/${fwdId}/fwd-submit-forms.png`,
+    thumbnail: `${BASE_PROJECT_URL}/${fwdId}/fwd.png`,
     images: [
         `${BASE_PROJECT_URL}/${fwdId}/fwd-login.png`,
         `${BASE_PROJECT_URL}/${fwdId}/fwd-admindashboard.png`,
@@ -57,9 +57,12 @@ export const fwd: Project = {
     ],
     slug: `${BASE_URL}/${fwdId}`,
     title: "E-Form Designer",
-    tagline: "Build Forms easily",
+    tagline: "Build Forms Easily",
     description: {__html: 
-        `E-Form Designer was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner, Natalie designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using SCRUM framework.
+        `E-Form Designer is a web application built in Vue.js, Spring Boot and MongoDB that aims to streamline form creation and collection, much like FormSG. Companies can create their own 
+        forms for internal use and collect the data with ease, no matter the type of data they wish to collect. 
+        As form generation is dynamic, users can create forms using drag and drop components, which creates the corresponding entry inside the database. Data entered into the created form will henceforth be saved into that created document.
+        This was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner, Natalie designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using SCRUM framework.
         <br/><br/>
         The project was initially a 2-month project and had workflows included in its project specifications, however, was cut down so that we could help work on applications that CSIT were currently using. We consistently engaged in discussions improve on certain features and consulted our mentor on topics we were unsure of.`
     },
@@ -70,7 +73,8 @@ export const fwd: Project = {
 const golunchId = "golunch"
 export const golunch: Project = {
     id: golunchId,
-    thumbnail: `${BASE_PROJECT_URL}/${golunchId}/golunch-tracking.png`,
+    videoLink: `https://www.youtube.com/watch?v=q1AopaQmv00`,
+    thumbnail: `${BASE_PROJECT_URL}/${golunchId}/golunch.png`,
     images: [
         `${BASE_PROJECT_URL}/${golunchId}/golunch-register.png`,
         `${BASE_PROJECT_URL}/${golunchId}/golunch-login.png`,
@@ -94,13 +98,14 @@ export const golunch: Project = {
     title: "GoLunch",
     tagline: "Walk & Earn",
     description: {__html:
-        `GoLunch was my final-year project, done in July 2019. It was a special project not only because it was my first client project, but because this was a first-ever joint-collaboration between Singapore Polytechnic and theFIRMA, a university based in Finland. The project’s client was Kupittaan Paviljonki, a Finland-based restaurant, and they wanted a web-based tracking app that customers could access anywhere and track the distance walked to and fro their restaurants to provide discounts for customers. <br/><br/>
-        We used web3.js to store the distance tracked, and perform transactions whenever the user gains more points, or decides to redeem his points. This was also a submission for PolyFintech100 API Hackathon.
+        `GoLunch is a Progressive Web App (PWA) built in React.js and Express.js. It tracks the user's walked distance and converts it into points that the user can use for discounts/offers at any of the client's restaurants.
+        This was my final-year project, done in July 2019. It was a special project to me not only because it was my first actual client project, but because this was a first-ever joint-collaboration between Singapore Polytechnic and theFIRMA, a university based in Finland. The project’s client was Kupittaan Paviljonki, a Finland-based restaurant, and they wanted a web-based tracking app that customers could access anywhere and track the distance walked to and fro their restaurants to provide discounts for customers. <br/><br/>
+        We used web3.js to store the distance tracked, and perform transactions whenever the user gains more points, or decides to redeem his points. 
         <h3 class="section-header">Challenges</h3>
-        This was a challenging project to tackle due to the vague requirements and nature of project. The client requested for mobile features, but wished for the product to be a Progressive Web App (PWA). Additionally, due to the difference in timezones between Finland and Singapore, we rarely could find a suitable time for both parties to discuss. So even if we had questions, we had to wait them off until we could talk to the client, and this lead to wasted effort and time working on features that the client did not wish for.
+        This was a challenging project to tackle due to the vague requirements and nature of project. The client requested for mobile features, but wished for the product to be a PWA. Additionally, due to the difference in timezones between Finland and Singapore, we rarely could find a suitable time for both parties to discuss. So even if we had questions, we had to wait them off until we could talk to the client, and this lead to wasted effort and time working on features that the client did not wish for.
         `
     },
-    stack: ["React", "Express", "MySQL", "web3.js (Blockchain)"],
+    stack: ["React", "Express", "MySQL", "web3.js", "Truffle"],
     challenges: {__html: `There was a lot of confusion during the initial phase of the project as the app that the client wanted pointed towards a native mobile app. Our group began learning React Native, but by the time the client clarified that he wanted a Progressive Web App, we had wasted 1-2 weeks. 
     <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `}
 }
@@ -134,7 +139,18 @@ export const aivin: Project = {
     slug: `${BASE_URL}/${aivinId}`,
     title: "AIvin",
     tagline: "Your everyday chatbot",
-    description: {__html: `AIvin is a simple chatbot built with Expo`},
+    description: {__html: `
+        <h3 class="section-header">Inspiration</h3>
+        AIvin is a simple chatbot built with Expo created for the 48-hours SupriseHacks 2021 Competition. By conversing with AIvin, you get to hear a few random
+        quips and quotes from. However, that didn't interest me enough, so I added a poke button, which would irritate him and cause him to spew out insults.
+        I always had a love of planting easter eggs into seemingly normal programs, so this poke button would eventuall trigger a special scene which would 
+        hijack the phone as a result of AIvin reaching peak irritation.
+
+        <h3 class="section-header">Challenges</h3>
+        The chat interface uses react-native-gifted-chat to send and receive messages to and from the user, and it was for the most part, simple.
+        The difficult part, however, lay in implemting the Call Screen. I had to very closely imitate iPhone's actual call screen, positioning the elements just nicely and ensuring every colour had the right tinge.
+        Not only that, I had to ensure that text-to-speech was timed properly and that AIvin would respond accordingly when the user tapped on the End Call button.
+    `},
     stack: ["Expo", "React Native", "react-native-gifted-chat", "expo-av", "expo-speech"],
     expanded: true
 }
@@ -162,11 +178,11 @@ export const timezonify: Project = {
         In the end, I decided that my original idea wasn't so bad after all: a button which when clicked would use regex to find and convert all valid timezones into local timezones. For those timezones which could not be caught during the initial regex search, there is a timezone converter built into the web extension itself, which allows the user to manually convert timezones into their own timezone.
     
         <br/><br/>
-        <h3 class="section-header">Try it out yourself</h3>
+        <h3 class="section-header">Try it out yourself here</h3>
         <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/timezonify/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">Firefox</a><br/>
         <a target="_blank" href="https://chrome.google.com/webstore/detail/timezonify/blaebhbhlcdbeiepibjlnpcphmcokjpo">Google</a>
     `},
-    stack: ["Javascript", "Regex", "Web Extension", "Selection & Range API"]
+    stack: ["Web Extension API", "Javascript", "Regex", "Selection & Range API"]
 }
 
 const mowbraycounterId = "mowbray-counter"
@@ -190,6 +206,24 @@ export const mowbraycounter: Project = {
         You can try the bot in Telegram: @mowbraycounter_bot
     `},
     stack: ["Python", "PyTelegramBotAPI", "PostgreSQL", "Heroku"]
+}
+
+const translinerWebsiteId = "transliner-website";
+export const translinerWebsite: Project = {
+    id: translinerWebsiteId,
+    images: [
+        `${BASE_PROJECT_URL}/${translinerWebsiteId}/translinerwebsite-home.png`,
+    ],
+    slug: `${BASE_URL}/${translinerWebsiteId}`,
+    title: "Transliner Website",
+    description: {__html: `
+        This website was created for Transliner Group, a company where I worked for a short while before I enlisted into the army.
+        It was created with Angular and was meant to replace the old website, which was slow and limited in its capabilities. Additionally,
+        the website was meant to be connected to the company's backend, which I also helped upgrade from WebForms to ASP.NET Web APIs and 
+        using Bootstrap and jQuery.   
+    `
+    },
+    stack:["Angular", "ASP.NET", "Web API", "HTML", "Bootstrap", "jQuery"]
 }
 
 // order of projects depends on ordering here
