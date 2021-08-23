@@ -42,6 +42,7 @@ export const fwd: Project = {
     id: fwdId,
     thumbnail: `${BASE_PROJECT_URL}/${fwdId}/fwd.png`,
     images: [
+        `${BASE_PROJECT_URL}/${fwdId}/fwd.png`,
         `${BASE_PROJECT_URL}/${fwdId}/fwd-login.png`,
         `${BASE_PROJECT_URL}/${fwdId}/fwd-admindashboard.png`,
         `${BASE_PROJECT_URL}/${fwdId}/fwd-profile.png`,
@@ -76,6 +77,7 @@ export const golunch: Project = {
     videoLink: `https://www.youtube.com/watch?v=q1AopaQmv00`,
     thumbnail: `${BASE_PROJECT_URL}/${golunchId}/golunch.png`,
     images: [
+        `${BASE_PROJECT_URL}/${golunchId}/golunch.png`,
         `${BASE_PROJECT_URL}/${golunchId}/golunch-register.png`,
         `${BASE_PROJECT_URL}/${golunchId}/golunch-login.png`,
         `${BASE_PROJECT_URL}/${golunchId}/golunch-home.png`,
@@ -110,17 +112,6 @@ export const golunch: Project = {
     <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `}
 }
 
-
-const routineReminderId = "routine-reminder"
-export const routineReminder: Project = {
-    id: routineReminderId,
-    images: ["projects/golunch/poster.jpg"],
-    slug: `${BASE_URL}/${routineReminderId}`,
-    title: "Routine Reminder",
-    tagline: "Discipline yourself",
-    description: {__html: ``},
-    stack: ["Expo, React Native"],
-}
 
 const aivinId = "AIvin"
 export const aivin: Project = {
@@ -160,6 +151,7 @@ export const timezonify: Project = {
     id: timezonifyId,
     thumbnail: `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-web-thumbnail.png`,
     images: [
+        `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-web-thumbnail.png`,
         `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-converting.jpg`,
         `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-converted.jpg`,
         `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-convert-time.jpg`,
@@ -226,8 +218,31 @@ export const translinerWebsite: Project = {
     stack:["Angular", "ASP.NET", "Web API", "HTML", "Bootstrap", "jQuery"]
 }
 
+const routineReminderId = "routine-reminder";
+export const routineReminder: Project = {
+    id: routineReminderId,
+    thumbnail: `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-thumbnail.png`,
+    tagline: "Discipline your mind",
+    images: [
+        `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-thumbnail.png`,
+        `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-routines.jpg`,
+        `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-start-routine.jpg`,
+        `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-add-routine.jpg`,
+        `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-add-reminder.jpg`,
+    ],
+    slug: `${BASE_URL}/${routineReminderId}`,
+    title: "Routine Reminder",
+    description: {__html: `
+        Routine Reminder is a cross-platform mobile application which allows users to create routines, in which
+        the users can "start doing". The app will track the time passed and notify the user when the task is done. 
+        Users are able to add checkpoints to each routine, which allows for dynamic routines to be created. 
+    `},
+    stack: ["React Native", "Expo"]
+}
+ 
 // order of projects depends on ordering here
 export default {
+    routineReminder,
     golunch,
     fwd,
     timezonify,
