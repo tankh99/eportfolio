@@ -38,7 +38,7 @@ const BASE_URL = "/work"
 // }
 
 const ewtrId = "eye-want-to-rest"
-export const chatApp: Project= {
+export const ewtr: Project= {
     id: ewtrId,
     title: "Eye Want to Rest",
     thumbnail: `${BASE_PROJECT_URL}/${ewtrId}/app-feature-graphic.png`,
@@ -292,11 +292,11 @@ export const routineReminder: Project = {
  
 // order of projects depends on ordering here
 export default {
-    routineReminder,
+    ewtr,
     golunch,
     fwd,
     timezonify,
-    mowbraycounter,
     aivin,
-    chatApp,
+    routineReminder,
+    mowbraycounter
 }
