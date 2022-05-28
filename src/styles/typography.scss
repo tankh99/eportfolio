@@ -1,0 +1,97 @@
+@import './theme.scss';
+
+$paragraph-size: 18px;
+
+:root{
+    --page-title: 36px;
+    --title: 28px;
+    // --subtitle: 
+}
+
+div, p{
+    color: $inactive-text-color;
+}
+
+p, .typing{
+    // line-height: 2em;
+}
+
+p, div, li {
+    font-size: $paragraph-size;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    &:hover{
+      color: rgba(255,255,255,1) !important;
+    }
+  }
+  
+
+a:hover{
+    color: "black"
+}
+
+.hero{
+    font-size:48px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+
+.section-header{
+    // text-transform:uppercase;
+    font-size: 21px;
+    line-height:3.5em;
+}
+
+
+.page-title, h1 {
+    font-size: var(--page-title);
+    font-weight: bold
+}
+.title, h2 {
+    font-size: var(--title);
+    line-height: 2.5em;
+}
+
+.subtitle, h6{
+    // font-size: var(--subtitle);
+    color: $inactive-text-color;
+    font-size: 24px;
+}
+
+.link {
+    color: $inactive-text-color;
+    cursor: pointer;
+    &:hover{
+        color: $active-text-color;
+    }
+    &:hover a {
+        color: $active-text-color;
+
+    }
+}
+.typing-link{
+    text-decoration: underline !important;
+}
+
+.typist{
+    white-space: pre-wrap;
+}
+
+.centered-text{
+    text-align:center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.translucent{
+    color: rgba(255,255,255,0.7);
+}
