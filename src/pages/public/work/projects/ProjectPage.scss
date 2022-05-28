@@ -76,3 +76,33 @@ $maxThumbHeight: 80px;
 .section-header{
     margin-top: 20px
 }
+
+.carousel-nav{
+    top: 50%;
+    position: absolute;
+    z-index: 1;
+    font-size: 3rem;
+    // left: 3%;
+    transition: all;
+    cursor: pointer;
+    cursor:pointer;
+    background:transparent;
+    border:none;
+}
+
+.left-nav{
+    left: -10%
+}
+
+.right-nav {
+    right: -10%
+}
+
+.carousel-nav:hover{
+    transform: scale(1.1);
+    color:white
+}
+
+.carousel-nav:active{
+    transform:scale(1.2)
+}

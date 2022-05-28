@@ -21,7 +21,7 @@ export default function LandingPage(props :P){
             layers={[
                 {
                     image: source, 
-                    amount: 0.3
+                    speed: 10
                 }]}
             style={{height: "500px"}}
             >

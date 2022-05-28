@@ -23,7 +23,9 @@ export const ProjectDisplay = (props: P) => {
         
     useEffect(() => {
         const imageToImport = thumbnail || images[0]
-        setImage(require(`assets/images/${imageToImport}`).default)
+        // console.log("img path", imageToImport)
+        console.log(require(`../../assets/images/${imageToImport}`))
+        setImage(require(`../../assets/images/${imageToImport}`))
     },[])
 
 

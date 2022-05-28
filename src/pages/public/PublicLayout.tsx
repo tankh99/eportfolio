@@ -1,6 +1,6 @@
 import { Layout, Menu, Slider } from 'antd';
-import React, { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect, useLocation} from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import {BrowserRouter as Router, Route, useLocation, Routes, Navigate} from 'react-router-dom'
 import NotFoundPage from './NotFoundPage';
 import Navbar from '../../components/layout/navbar/Navbar';
 import * as paths from '../../constants/routes'
@@ -30,6 +30,12 @@ export default function PublicLayout(){
     const location: any = useLocation();
     const backgroundHeight = useSelector((state: any) => state.ui.backgroundHeight)
 
+    const [displayLocation, setDisplayLocation] = useState(location)
+    const [transitionStage, setTransitionStage] = useState("fadeIn")
+
+    useEffect(() => {
+        if(location !== displayLocation) setTransitionStage("fadeOut")
+    }, [location, displayLocation])
     return(
         <>
             {/* <ParallaxBackground image={smallSquares} intensity={0.3}/>
@@ -37,27 +43,29 @@ export default function PublicLayout(){
             <ParallaxBackground image={largeSquares} intensity={0.1}/> */}
             <Navbar/>
             
-            <TransitionGroup>
-                <CSSTransition 
+                {/* <CSSTransition 
                     key={location.key}
                     classNames="fade"
-                    timeout={300}>
-                    <div className="main">
-                        <Switch location={location}>
-                            <Redirect exact path="/" to={paths.HOME_PATH}/>
-                            <Route path={paths.HOME_PATH} component={HomePage}/>
-                            <Route path={paths.ABOUT_PATH} component={AboutPage}/>
-                            <Route path={`${paths.WORK_PATH}/:id`} component={ProjectPage}/>
-                            <Route path={paths.WORK_PATH} component={WorkPage}/>
-                            <Route path={paths.CONTACT_PATH} component={ContactPage}/>
-                            <Route path="/">
-                                <NotFoundPage/>
-                            </Route>
-                        </Switch>
+                    timeout={300}> */}
+                    <div className={`main ${transitionStage}`} onAnimationEnd={() => {
+                        if(transitionStage == "fadeOut") {
+                            setTransitionStage("fadeIn")
+                            setDisplayLocation(location)
+                        }
+                    }}>
+                        <Routes location={displayLocation}>
+                            
+                            
+                        <Route path={paths.HOME_PATH} element={<HomePage/>}/>
+                            <Route path={paths.ABOUT_PATH} element={<AboutPage/>}/>
+                            <Route path={`${paths.WORK_PATH}/:id`} element={<ProjectPage/>}/>
+                            <Route path={paths.WORK_PATH} element={<WorkPage/>}/>
+                            <Route path={paths.CONTACT_PATH} element={<ContactPage/>}/>
+                            {/* <Route path="*" element={<Navigate to="/" replace/>}/> */}
+                        </Routes>
                         {/* <Footer/> */}
                     </div>
-                </CSSTransition>
-            </TransitionGroup>
+                {/* </CSSTransition> */}
         </>
     )
 }

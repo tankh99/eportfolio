@@ -48,6 +48,13 @@ export default function AboutPage(){
                 <li>Awarded with the Accenture Technology Prize, which is given to only the top 5% of the graduating cohort</li>
             </ul>
 
+
+            {/* <h3>Work Experience</h3>
+            <ul>
+                <li>Translienr Pte Ltd </li>
+                <li>Awarded with the CSIT Diploma Scholarship in 2019</li>
+                <li>Awarded with the Accenture Technology Prize, which is given to only the top 5% of the graduating cohort</li>
+            </ul> */}
             <h3>Want to work with me?</h3>
             <p>Contact me at khanghou99@gmail.com</p>
             <p>Here&rsquo;s my &nbsp;

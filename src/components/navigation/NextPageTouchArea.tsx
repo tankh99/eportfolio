@@ -1,7 +1,7 @@
 import { DoubleLeftOutlined, DoubleRightOutlined, RightOutlined } from '@ant-design/icons';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
+import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 import { getNameFromPath, getSlug } from '../../utils/utils';
 import "./NextPageTouchArea.scss"
 
@@ -19,7 +19,7 @@ export default function NextPageTouchArea(props: P){
 
     const projectsReducer = useSelector((state: any) => state.projects)
     const location:any = useLocation();
-    const history: any = useHistory();
+    const navigate: any = useNavigate();
     
     const projects = projectsReducer.projects;
     // const toProject = projectsReducer.projects.filter((project: any) => project.slug == to)[0]
@@ -33,8 +33,8 @@ export default function NextPageTouchArea(props: P){
     return (
         <div>
 
-            {(history.length > 0) &&
-                <a onClick={() => history.goBack()} 
+            {(navigate.length > 0) &&
+                <a onClick={() => navigate(-1)} 
                     className={`touch-area left ${props.direction ? `${props.direction}` : Direction.Horizontal}`}>
                     <div className="direction-container">
                         <DoubleLeftOutlined className="direction-icon"/>
@@ -44,11 +44,11 @@ export default function NextPageTouchArea(props: P){
             }
             {toIndex && 
                 <Link 
+                    state={{
+                        prevPath: getNameFromPath(location.pathname)
+                    }}
                     to={{
                         pathname: toProject.slug,
-                        state: {
-                            prevPath: getNameFromPath(location.pathname)
-                        }
                     }} 
                     
                     className={`touch-area right ${props.direction ? `${props.direction}` : Direction.Horizontal}`}>

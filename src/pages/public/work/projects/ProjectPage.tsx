@@ -2,7 +2,7 @@
 import { StyleSheet, css } from 'aphrodite-jss';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import PageRoot from '../../../../components/layout/PageRoot';
 import NextPageTouchArea from '../../../../components/navigation/NextPageTouchArea';
 import PageSection from '../../../../components/PageSection';
@@ -12,15 +12,19 @@ import "./ProjectPage.scss"
 import * as routes from '../../../../constants/routes';
 import TopLeftAction from 'components/layout/top-left-action/TopLeftAction';
 import { Col, Row, Tag } from 'antd';
-import { Carousel } from 'react-responsive-carousel';
 import ReactPlayer from 'react-player';
+import ImageGallery from 'react-image-gallery'
+import { AnyPtrRecord } from 'dns';
 
 
 export default function ProjectPage(){
 
-    const history: any = useHistory();
     const params: any = useParams();
-
+    const [showVideo, setShowVideo]: any = useState({})
+    const [showGalleryPlayButton, setShowGalleryPlayButton] = useState(true)
+    const [showFullscreenButton, setShowFullscreenButton] = useState(false)
+    const [showGalleryFullscreenButton, setShowGalleryFullscreenButton] = useState(false)
+    const [showPlayButton, setShowPlayButton] = useState(false)
     const projectsReducer = useSelector((state: any) => {
         return state.projects
     });
@@ -28,47 +32,92 @@ export default function ProjectPage(){
     const project = projectsReducer.projects.filter((project: any) => {
         return project.id == params.id
     })[0]
-
-    // if (project == null){
-    //     history.push(routes.WORK_PATH);
-    // }
-
-    const customRenderItem = (item: any, props: any) => {
-        if(item){
-            const Element = item.type
-            return <Element {...item.props} {...props} />
-        } else{
-            return false
-        }
-    }
-
-    const getVideoThumb = (videoId: string) => ` http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-    // http://i3.ytimg.com/vi/s4evmpyF7Dg/hqdefault.jpg
-    const getVideoId = (url: string) => {
-        return url.substr('https://youtu.be/'.length, url.length);
-    }
-
-    const customRenderThumb = (children: any) =>{
-        const mappedThumbs: any = []
-        children.map((item: any, index: number) => {
-            if(item){
-                if(item.length){
-                    const items = item.map((image: any, index: number) => {
-                        mappedThumbs.push(<img key={index} src={image.props.children.props.src}/>)
-                    })
-                    return items
-                } else if(item.props.url) {
-                    const videoId = getVideoId(item.props.url);
-                    mappedThumbs.push(<img key={index} src={getVideoThumb(videoId)} />)
-                }
+    
+    const renderImages = (images: any, videoLink?: string) => {
+        const galleryImagesArr: any = []
+        let galleryImages: any = {}
+        if(videoLink){
+            const videoItem = {
+                original: require(`assets/images/projects/golunch/golunch-youtube-ss.png`),
+                thumbnail: require(`assets/images/projects/golunch/golunch-youtube-ss.png`),
+                embedUrl: videoLink,
+                renderItem: () => _renderVideo(videoItem)
             }
-            
-        });
-        return mappedThumbs
+            galleryImagesArr.push(videoItem)
+        }
+        images.map((image: any, index: number) => {
+            galleryImagesArr.push(
+                {
+                    original: require(`assets/images/${image}`),
+                    thumbnail: require(`assets/images/${image}`),
+                }
+            )
+        })
+        galleryImages = {...[galleryImagesArr]}[0]
+        console.log(galleryImages)
+        return galleryImages
     }
+    const _toggleShowVideo = (url:string) => {
+        showVideo[url] = !(showVideo[url]);
+        setShowVideo(showVideo)
     
+        if (showVideo[url]) {
+          if (showPlayButton) {
+            setShowGalleryPlayButton(false)
+          }
     
-    const {title, tagline, description, images, stack, challenges, videoLink, isMobile} = project
+          if (showFullscreenButton) {
+            setShowGalleryFullscreenButton(false)
+          }
+        }
+      }
+
+    const _renderVideo = (item: any) => {
+        return (
+          <div>
+            {
+              videoLink ?
+                <div className='video-wrapper'>
+                    <a
+                      className='close-video'
+                      onClick={() => _toggleShowVideo(item.embedUrl)}
+                    >
+                    </a>
+                    <iframe width="560" height="315" 
+                    src={item.embedUrl} 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen></iframe>
+                    {/* <iframe
+                      width='560'
+                      height='315'
+                      src={"https://www.youtube.com/watch?v=q1AopaQmv00"}
+                      frameBorder='0'
+                      allowFullScreen
+                    >
+                    </iframe> */}
+                </div>
+              :
+                <a onClick={() => _toggleShowVideo(item.embedUrl)}>
+                  <div className='play-button'></div>
+                  <img className='image-gallery-image' src={item.original} />
+                  {
+                    item.description &&
+                      <span
+                        className='image-gallery-description'
+                        style={{right: '0', left: 'initial'}}
+                      >
+                        {item.description}
+                      </span>
+                  }
+                </a>
+            }
+          </div>
+        );
+      }
+    
+    const {title, tagline, description, images, stack, challenges, videoLink}: Project = project
     const sectionStyle = isMobileDevice() ? styles.mobileProjectPageSection : styles.desktopProjectPageSection
     return (
         <PageRoot>
@@ -82,7 +131,18 @@ export default function ProjectPage(){
                 </div>
             </PageSection>
             <PageSection customStyles={sectionStyle} >
-                <Carousel 
+                <ImageGallery
+                    showFullscreenButton={showFullscreenButton && showGalleryFullscreenButton}
+                    showPlayButton={showPlayButton && showGalleryPlayButton}
+                    renderLeftNav={(onClick, disabled) => {
+                        return <CarouselNav className="left-nav" onClick={onClick} disabled={disabled}>&#8592;</CarouselNav>
+                    }}
+                    renderRightNav={(onClick, disabled) => {
+                        return <CarouselNav className="right-nav" onClick={onClick} disabled={disabled}>	&#8594;</CarouselNav>
+                    }}
+                    items={renderImages(images, videoLink)}
+                    />
+                {/* <Carousel 
                     renderItem={customRenderItem}
                     renderThumbs={customRenderThumb}>
                         {videoLink &&
@@ -99,7 +159,7 @@ export default function ProjectPage(){
                                 </div>
                             )
                         })}
-                </Carousel>
+                </Carousel> */}
             </PageSection>
             <PageSection customStyles={sectionStyle} >
                 <h2 >Description</h2>
@@ -119,12 +179,11 @@ export default function ProjectPage(){
     )
 }
 
-const YoutubeSlide = ({url}: any) => {
+export function CarouselNav({onClick, disabled, className, children}: any){
     return (
-        <ReactPlayer 
-            className="video-slide"
-            width="100%" 
-            url={url}/>
+        <button className={`carousel-nav ${className}`} onClick={onClick} disabled={disabled}>
+            {children}
+        </button>
     )
 }
 

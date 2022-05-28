@@ -51,9 +51,11 @@ const Project = ({index, project}: any) => {
     // console.log(project)
     return (
 
-        <Link to={{
+        <Link 
+
+        state={{prevPath: getNameFromPath(window.location.pathname)}}
+        to={{
             pathname: project.slug,
-            state: {prevPath: getNameFromPath(window.location.pathname)}
         }}>
             <Delay delay={(index + 1) * 250}>
                 <ProjectDisplay project={project}/>

@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+eportfolio-assets.xd
+react-responsive-carousel-3.2.18.tgz
 
 # testing
 /coverage
