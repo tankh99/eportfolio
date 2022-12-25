@@ -14,6 +14,7 @@ import { Delay } from '../../../../components/Delay';
 import { Link } from 'react-router-dom';
 import { getNameFromPath } from 'utils/utils';
 import useIsInViewport from 'hooks/useIsInViewport';
+import { WORK_PATH } from 'constants/routes';
 
 export default function ProjectsSection(){
     const targetRef = useRef(null)
@@ -54,7 +55,7 @@ const Project = ({index, project}: any) => {
         <Link 
             state={{prevPath: getNameFromPath(window.location.pathname)}}
             to={{
-                pathname: project.slug,
+                pathname: `${WORK_PATH}/${project.id}`,
             }}>
             <Delay delay={(index + 1) * 150}>
                 <ProjectDisplay project={project}/>

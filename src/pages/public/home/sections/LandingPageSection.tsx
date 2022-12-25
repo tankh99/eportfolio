@@ -97,7 +97,7 @@ export default function LandingPageSection(){
                     animate={finishTyping ? "visible" : "hidden"}
                     variants={fadeInAnimation.item}
                     onAnimationComplete={() => setTimeout(() => {setStartAnimation(true), 500})}>
-                    <Link to="/work" className="button">
+                    <Link to={WORK_PATH} className="button">
                         View my work
                     </Link>
                 </motion.div>

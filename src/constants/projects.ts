@@ -4,7 +4,6 @@ export interface Project {
     id: string,
     title: string,
     thumbnail?: string,
-    slug: string,
     tagline?: string,
     description: any,
     images: string[],
@@ -42,7 +41,6 @@ export const ewtr: Project= {
     id: ewtrId,
     title: "Eye Want to Rest",
     thumbnail: `${BASE_PROJECT_URL}/${ewtrId}/app-feature-graphic.png`,
-    slug: `${BASE_URL}/${ewtrId}`,
     description: {__html: `
         Eye Want to Rest helps your eyes work the way it's intended to. Eye Want to Rest gives your eyes the time to rest it needs from looking at our screens all day long and reduces occurrence of dry eyes
 
@@ -78,7 +76,6 @@ export const wallGame: Project = {
     title: "Wall Game",
     videoLink: "https://www.youtube.com/embed/MqJhxnR0Oxc",
     thumbnail: `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
-    slug: `${BASE_URL}/${wallGameId}`,
     tagline: "Run fast, avoid walls",
     description: {__html: `Created as a side-project during the holiday to learn more about Three.js and 3D programming. 
         The premise of the game is meant to be simple, with simple player controls, objective and a basic
@@ -111,7 +108,6 @@ export const fwd: Project = {
         `${BASE_PROJECT_URL}/${fwdId}/fwd-submitted-form.png`,
         
     ],
-    slug: `${BASE_URL}/${fwdId}`,
     title: "E-Form Designer",
     tagline: "Build Forms Easily",
     description: {__html: 
@@ -151,7 +147,6 @@ export const golunch: Project = {
         `${BASE_PROJECT_URL}/${golunchId}/golunch-manage-shops-rewards.png`,
         `${BASE_PROJECT_URL}/${golunchId}/golunch-manage-shops-qr.png`,
     ],
-    slug: `${BASE_URL}/${golunchId}`,
     title: "GoLunch",
     tagline: "Walk & Earn",
     description: {__html:
@@ -182,7 +177,6 @@ export const aivin: Project = {
         `${BASE_PROJECT_URL}/${aivinId}/aivin-call-accepted-2.jpg`,
         `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
     ],
-    slug: `${BASE_URL}/${aivinId}`,
     title: "AIvin",
     tagline: "Your everyday chatbot",
     description: {__html: `
@@ -211,7 +205,6 @@ export const timezonify: Project = {
         `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-canada-us.jpeg`,
         `${BASE_PROJECT_URL}/${timezonifyId}/timezonify-timezone-diff.jpeg`,
     ],
-    slug: `${BASE_URL}/${timezonifyId}`,
     title: "Timezonify",
     tagline: "Converting timezones with a click",
     description: {__html: `
@@ -257,7 +250,6 @@ export const mowbraycounter: Project = {
         `${BASE_PROJECT_URL}/${mowbraycounterId}/mowbraycounter-detailed-visits.png`,
 
     ],
-    slug: `${BASE_URL}/${mowbraycounterId}`,
     title: "Mowbray Counter",
     tagline: "Record your visits",
     description: {__html:`
@@ -276,7 +268,6 @@ export const translinerWebsite: Project = {
     images: [
         `${BASE_PROJECT_URL}/${translinerWebsiteId}/translinerwebsite-home.png`,
     ],
-    slug: `${BASE_URL}/${translinerWebsiteId}`,
     title: "Transliner Website",
     description: {__html: `
         This website was created for Transliner Group, a company where I worked for a short while before I enlisted into the army.
@@ -300,7 +291,6 @@ export const routineReminder: Project = {
         `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-add-routine.jpg`,
         `${BASE_PROJECT_URL}/${routineReminderId}/routine-reminder-add-reminder.jpg`,
     ],
-    slug: `${BASE_URL}/${routineReminderId}`,
     title: "Routine Reminder",
     description: {__html: `
         Routine Reminder is a cross-platform mobile application which allows users to create routines, in which

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {BrowserRouter as Router, Route, useLocation, Routes, Navigate} from 'react-router-dom'
+import {BrowserRouter as Router, Route, useLocation, Routes, Navigate, useNavigate} from 'react-router-dom'
 import NotFoundPage from './NotFoundPage';
 import Navbar from '../../components/layout/navbar/Navbar';
 import * as paths from '../../constants/routes'
@@ -26,7 +26,8 @@ import { ParallaxBanner } from 'react-scroll-parallax';
 // ]
 
 export default function PublicLayout(){
-    const location: any = useLocation();
+    const location = useLocation();
+    const navigate = useNavigate();
     const backgroundHeight = useSelector((state: any) => state.ui.backgroundHeight)
 
     const [displayLocation, setDisplayLocation] = useState(location)
@@ -35,6 +36,14 @@ export default function PublicLayout(){
     useEffect(() => {
         if(location !== displayLocation) setTransitionStage("fadeOut")
     }, [location, displayLocation])
+    
+    useEffect(() => {
+        console.log(location.pathname)
+      if (location.pathname == "/") {
+        navigate(paths.HOME_PATH)
+      }
+    }, [location.pathname])
+    
     return(
         <>
             {/* <ParallaxBackground image={smallSquares} intensity={0.3}/>
@@ -52,16 +61,16 @@ export default function PublicLayout(){
                             setDisplayLocation(location)
                         }
                     }}>
-                        <Routes location={displayLocation}>
-                            
-                            
-                        <Route path={paths.HOME_PATH} element={<HomePage/>}/>
-                            <Route path={paths.ABOUT_PATH} element={<AboutPage/>}/>
-                            <Route path={`${paths.WORK_PATH}/:id`} element={<ProjectPage/>}/>
-                            <Route path={paths.WORK_PATH} element={<WorkPage/>}/>
-                            <Route path={paths.CONTACT_PATH} element={<ContactPage/>}/>
-                            {/* <Route path="*" element={<Navigate to="/" replace/>}/> */}
-                        </Routes>
+                        <>
+                            <Routes location={displayLocation}>
+                                <Route path={paths.HOME_PATH} element={<HomePage/>}/>
+                                <Route path={paths.ABOUT_PATH} element={<AboutPage/>}/>
+                                <Route path={`${paths.WORK_PATH}/:id`} element={<ProjectPage/>}/>
+                                <Route path={paths.WORK_PATH} element={<WorkPage/>}/>
+                                <Route path={paths.CONTACT_PATH} element={<ContactPage/>}/>
+                                {/* <Route path="*" element={<Navigate to="/" replace/>}/> */}
+                            </Routes>
+                        </>
                         {/* <Footer/> */}
                     </div>
                 {/* </CSSTransition> */}
