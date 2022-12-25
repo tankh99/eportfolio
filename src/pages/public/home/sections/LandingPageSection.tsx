@@ -92,7 +92,7 @@ export default function LandingPageSection(){
                     </div>
                 </div>
                 <motion.div
-                    className="main-button-container"
+                    className="mt-8"
                     initial={"hidden"}
                     animate={finishTyping ? "visible" : "hidden"}
                     variants={fadeInAnimation.item}
