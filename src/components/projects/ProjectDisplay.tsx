@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { Col } from 'antd';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,35 +23,19 @@ export const ProjectDisplay = (props: P) => {
     useEffect(() => {
         const imageToImport = thumbnail || images[0]
         // console.log("img path", imageToImport)
-        console.log(require(`../../assets/images/${imageToImport}`))
         setImage(require(`../../assets/images/${imageToImport}`))
     },[])
 
-
-    const styles = StyleSheet.create({
-        
-        projectImage: {
-            // backgroundImage: `url(${image})`,
-            // "&::after": {
-            //     content: `'${title}'`,
-            //     display: "none",
-            //     color: "white",
-            //     position: "absolute",
-            //     top: "50%",
-            //     left: "50%",
-            //     transform: "translate(-50%, -50%)"
-            // }
-        }
-    })
     
     return (
         <motion.div
-            className={"project"}
+            className={"project relative"}
             initial="hidden"
             animate={image ? "visible" : "hidden"}
+            // TODO: FIx the slideup animation not starting with opacity 0
             variants={slideUpAnimation.item}>
             <div
-                className={`project-image ${css(styles.projectImage)}`}
+                className={`project-image`}
                 style={{backgroundImage: `url(${image})`, backgroundSize: `${expanded ? "cover" : "contain"}`}}></div>
             <div className="project-overlay">
                 <h3 className="project-overlay-title">{title}</h3>

@@ -1,6 +1,6 @@
 import React from 'react';
 import FormFieldProps from './FormFieldProps'
-import {Input} from 'antd'
+import {Input} from '@chakra-ui/react'
 
 interface P extends FormFieldProps {
     [x:string]: any

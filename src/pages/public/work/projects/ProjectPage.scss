@@ -78,7 +78,7 @@ $maxThumbHeight: 80px;
 }
 
 .carousel-nav{
-    top: 50%;
+    // top: 50%;
     position: absolute;
     z-index: 1;
     font-size: 3rem;
@@ -86,23 +86,28 @@ $maxThumbHeight: 80px;
     transition: all;
     cursor: pointer;
     cursor:pointer;
-    background:transparent;
     border:none;
+    transition: 0.25s all;
+    background: rgba(0, 0,0,0.2);
+    padding: 0 8px;
+    height: 100%;
 }
 
 .left-nav{
-    left: -10%
+    left: 0
 }
 
 .right-nav {
-    right: -10%
+    right: 0
 }
 
+
 .carousel-nav:hover{
-    transform: scale(1.1);
+    // transform: scale(1.1);
+    background: rgba(0, 0,0,0.5);
     color:white
 }
 
 .carousel-nav:active{
-    transform:scale(1.2)
+    // transform:scale(1.2)
 }

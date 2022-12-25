@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NextPageTouchArea from '../../../components/navigation/NextPageTouchArea';
 import * as paths from '../../../constants/routes'
-import {Col, Image, Row} from 'antd';
 import { setBackgroundHeight } from 'store/actions/uiActions';
 
 export default function AboutPage(){
@@ -14,40 +13,50 @@ export default function AboutPage(){
     }, [])
     return (
         <PageRoot padded>
-            <h1>I design, develop and do it all again</h1>
-            <h3>Hi there, my name is name Khang Hou, also pronounced as kang · how.</h3>
+            <h1 className='text-4xl'>I design, develop and do it all again</h1>
+            <h3 className='text-2xl'>Hi there, my name is name Khang Hou, also pronounced as kang · how.</h3>
             <p>I&apos;m a software developer with 4 years of experience. I mainly use the Typescript with the React ecosystem (React, React Native and Express.js), but have also learnt and used other languages such as: Angular, C#, Spring Boot, Python and HTML, CSS and JS.</p>
-            
+            <br/>
             <p>
-            5 years ago, I was still studying a creative writing course. Given my love for writing, it only made sense that I would pursue such a course. I held a firm belief that I only ever wanted to study what I would enjoy doing in the future, and it&rsquo;s still a belief I hold close to my heart. But the novelty of writing wore off quickly when you are forced to do so everyday. In the end, it was just a hobby for me, and I switched courses after a year in.
+            I used to study creative writing in Singapore Polytechnic but switched courses after finding finding out that writing was not what I wanted to do long-term. I chose Information Technology because I was drawn to the idea of creating things from nothing.
             </p>
-            <Row>
-                <Col xs={24}>
-                    <Image
-                        className=""
-                        src={require("../../../assets/images/baby-through-hole.jpeg").default} />
-                    <p className="image-label">A picture I took around Aug 2016, during my time studying creative writing. It was actually more of a scriptwriting course, though</p>
-                </Col>
-            </Row>
+            <br/>
+            {/* TODO: Find out if anything wrong with layout of this */}
+            <img
+                className=""
+                src={require("../../../assets/images/baby-through-hole.jpeg")} />
+            <p className="image-label">A picture I took around Aug 2016, during my time studying creative writing. It was actually more of a scriptwriting course, though</p>
+        
             <p>
-            What enticed me to programming was that you could build whatever you envisioned, and you could see it happen in real-time. In a sense, programming was like writing, whatever wacky ideas you penned down would come true, only that coding was more practical. I&rsquo;ve always been a hands-on learner, absorbing more knowledge faster as I apply what I learn into real life. So being able to try out wacky ideas has immensely helped me grasp the handles on certain abstract concepts.
-            
+            With programming, you could build whatever you envisioned and it would all happen in real-time. the feedback loop was short, and learning programming was an enjoyable process. 
+            To me, programming was a lot like writing, whatever creative ideas you penned down would come true, only that coding had a more tangible effect. 
+            </p>
+            <br/>
+            <p>
+                I&rsquo;ve also always been a hands-on learner, absorbing more knowledge faster as I apply what I learn into real life. So being able to try out wacky ideas has immensely helped me grasp the handles on certain abstract concepts.
             </p>
             <div className="centered-image-container">
-            <Image
-                src={require("../../../assets/images/projects/AIvin/aivin-chat-2.jpg").default}/>
+            <img
+                src={require("../../../assets/images/projects/AIvin/aivin-chat-2.jpg")}/>
             <p className="image-label">Screenshot of AIvin, a submission for SurpriseHacks 2021</p>
             </div>
-            <p>In addition, I&rsquo;m able to actually help out people very easily using my programming skills. As the world is so deeply entrenched in technology nowadays, there isn&rsquo;t a facet in life that hasn&rsquo;t been impacted by technology in some way or another. And thus, there are so many problems that technology has been able to fix, like bionic prosthetics that allow the disabled to move normally again, treating dirty seawater into drinkable water, and even simply being able to sell your unwanted clothing at the comfort of your home</p>
+            <p>It&rsquo;s only after I became better at programming could I actually help others with my skills. It could be tackling real-world problems, building websites for others or even fixing computer issues, I could do so much more than before.</p>
+            <br></br>
             
-            <h3>Education</h3>
-            <p>I studied Information Technology in Singapore Polytechnic and achieved a 3.96 GPA, graduating in 2020 with a diploma with merit.</p>
-            <ul>
-                <li>Graduated with merit (only for top 10% of graduating cohort)</li>
-                <li>Awarded with the CSIT Diploma Scholarship in 2019</li>
-                <li>Awarded with the Accenture Technology Prize, which is given to only the top 5% of the graduating cohort</li>
-            </ul>
-
+            <div className='mb-4'>
+                <h3 className='text-2xl'>Education</h3>
+                <div className='mb-4'>
+                    <div className='text-xl font-bold'>National University of Singapore (2022 - Present)</div>
+                    <p>Studying Computer Science. Current GPA: 4.75</p>
+                </div>
+                <div className='text-xl font-bold'>Singapore Polytechnic (2016- 2020)</div>
+                <p>Studied Information Technology, achieved a 3.96 GPA and graduated with merit.</p>
+                <ul className='list-disc ml-4'>
+                    <li>Graduated with merit (only for top 10% of graduating cohort)</li>
+                    <li>Awarded with the CSIT Diploma Scholarship in 2019</li>
+                    <li>Awarded with the Accenture Technology Prize, which is given to only the top 5% of the graduating cohort</li>
+                </ul>
+            </div>
 
             {/* <h3>Work Experience</h3>
             <ul>
@@ -55,10 +64,9 @@ export default function AboutPage(){
                 <li>Awarded with the CSIT Diploma Scholarship in 2019</li>
                 <li>Awarded with the Accenture Technology Prize, which is given to only the top 5% of the graduating cohort</li>
             </ul> */}
-            <h3>Want to work with me?</h3>
+            <h3 className='text-2xl'>Want to work with me?</h3>
             <p>Contact me at khanghou99@gmail.com</p>
-            <p>Here&rsquo;s my &nbsp;
-                <a href="../../../assets/resume.pdf" download>resume</a>
+            <p>Here&rsquo;s my <a href="../../../assets/resume.pdf" download>resume too</a>
             </p>
         </PageRoot>
     )

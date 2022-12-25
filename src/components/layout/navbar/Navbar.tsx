@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { isMobileDevice } from '../../../constants/global';
 import {StyleSheet, css} from 'aphrodite-jss'
-import { Menu } from 'antd';
 import { Link, NavLink } from 'react-router-dom';
 import { ABOUT_PATH, HOME_PATH, WORK_PATH } from '../../../constants/routes';
-import Icon from '@ant-design/icons/lib/components/AntdIcon';
-import { MenuOutlined } from '@ant-design/icons';
 
 import './Navbar.scss';
 

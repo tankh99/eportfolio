@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import PageSection from '../../../../components/PageSection';
 import Typist from 'react-typist'
 import { fadeInAnimation, slideInAnimation, slideUpAnimation } from '../../../../constants/animations';
-import useIsInViewport from 'use-is-in-viewport';
+// import useIsInViewport from 'use-is-in-viewport';
 import { Link } from 'react-router-dom';
 import { ABOUT_PATH, WORK_PATH } from '../../../../constants/routes';
 import "./LandingPageSection.scss";
 import LandingPageAnimation from '../components/LandingPageAnimation';
-import { Col, Row } from 'antd';
 import { sessionGet, sessionSet } from '../../../../utils/storage';
+import {TypeAnimation} from 'react-type-animation'
 
 export default function LandingPageSection(){
 
@@ -18,22 +18,24 @@ export default function LandingPageSection(){
     
     const [finishTyping, setFinishTyping] = useState(sessionGet(introKey))
     const [startAnimation, setStartAnimation] = useState(false);
+    const [startTypingLine2, setStartTypingLine2] = useState(false)
 
     const onFinishTyping = () => {
         setFinishTyping(true)
         sessionSet(introKey, true)
     }
 
-    const typistSettings = {
-        className: "hero typist",
-        avgTypingDelay: 25,
-        stdTypingDelay: 5
-    }
-
-    const typistContent = {
-        __html: `<span>Hi there!</span>
-        <br/>
-        <span>I&apos;m Khang Hou. I&apos;m a full stack web &amp; mobile developer.</span>`
+    const intro = [
+        "Hi there, I'm Khang Hou.",
+        "I'm a full stack web & mobile developer based in Singapore."
+    ]
+    // I&apos;m Khang Hou. I&apos;m a full stack web &amp; mobile developer based in Singapore.
+    const typistContent = [
+        `<span>${intro[0]}</span><br/>`,
+        `<span>${intro[1]}</span>`
+]
+    const typistHtml = {
+        __html: typistContent.reduce((acc, s) => acc + s)
     }
 
     return (
@@ -48,28 +50,47 @@ export default function LandingPageSection(){
                     console.log(startTyping)
                 }, 1000)
             }}>Restart</button> */}
-                <Row justify="space-between" gutter={[0, 24]}>
-                    <Col flex={16} className={css(styles.col)} sm={24} md={16}>
-                        <div>
+                <div className='justify-between grid grid-cols-12 gap-4'>
+                    <div className="col-span-12 md:col-span-8">
+                        <div className=''>
                             {finishTyping ? 
-                                <div className="hero" dangerouslySetInnerHTML={typistContent}></div>
+                                <p style={{fontSize: '36px', lineHeight: '1.5em'}} dangerouslySetInnerHTML={typistHtml}></p>
                                 :
-                                <Typist {...typistSettings}
-                                    onTypingDone={() => onFinishTyping()}>
-                                    {/* <div dangerouslySetInnerHTML={typistContent}></div> */}
-                                    <span>Hi there!</span>
-                                    <br/>
-                                    <span>I&apos;m Khang Hou. I&apos;m a full stack web &amp; mobile developer.</span>
-                                </Typist>
-                                
+                                <>
+                                    <TypeAnimation
+                                        wrapper="div"
+                                        cursor={false}
+                                        style={{fontSize: '36px', lineHeight: '1.5em'}}
+                                        sequence={[
+                                            intro[0],
+                                            500,
+                                            () => {
+                                                setStartTypingLine2(true)
+                                            }
+                                        ]}/>
+                                    {startTypingLine2 &&
+                                        <TypeAnimation
+                                            wrapper="div"
+                                            cursor={true}
+                                            style={{fontSize: '36px', margin: "0 0"}}
+                                            sequence={[
+                                                intro[1],
+                                                1000,
+                                                () => {
+                                                    onFinishTyping()
+                                                }
+                                            ]}/>
+                                    }
+
+                                </>
                             }
 
                         </div>
-                    </Col>
-                    <Col flex={8} className={css(styles.col)} sm={24} md={8}>
+                    </div>
+                    <div className="col-span-24 md:col-span-4">
                         <LandingPageAnimation animate={startAnimation} />
-                    </Col>
-                </Row>
+                    </div>
+                </div>
                 <motion.div
                     className="main-button-container"
                     initial={"hidden"}

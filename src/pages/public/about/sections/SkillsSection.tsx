@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {motion} from 'framer-motion';
 import { slideInAnimation } from '../../../../constants/animations';
-import useIsInViewport from 'use-is-in-viewport';
+import useIsInViewport from 'hooks/useIsInViewport';
 
 export default function SkillsSection(){
 
     const [animated, setAnimated] = useState(false);
-    const [isInViewport, targetRef] = useIsInViewport();
+    const targetRef = useRef(null)
+    const [isInViewport] = useIsInViewport(targetRef);
 
     useEffect(() => {
         if(isInViewport){
@@ -17,6 +18,7 @@ export default function SkillsSection(){
     return(
         <div>
             <motion.div 
+                ref={targetRef}
                 initial="hidden"
                 animate={animated ? "visible" : "hidden"}
                 variants={slideInAnimation.container}>

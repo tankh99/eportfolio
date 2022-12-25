@@ -1,4 +1,3 @@
-import { Layout, Menu, Slider } from 'antd';
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, useLocation, Routes, Navigate} from 'react-router-dom'
 import NotFoundPage from './NotFoundPage';

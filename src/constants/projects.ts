@@ -72,6 +72,26 @@ export const ewtr: Project= {
     
 }
 
+const wallGameId = "wall-game"
+export const wallGame: Project = {
+    id: wallGameId,
+    title: "Wall Game",
+    videoLink: "https://www.youtube.com/embed/MqJhxnR0Oxc",
+    thumbnail: `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
+    slug: `${BASE_URL}/${wallGameId}`,
+    tagline: "Run fast, avoid walls",
+    description: {__html: `Created as a side-project during the holiday to learn more about Three.js and 3D programming. 
+        The premise of the game is meant to be simple, with simple player controls, objective and a basic
+        score system. To ensure I had enough time to complete and polish the result, I constrained the 
+        features to a basic game.`
+    },
+    images: [
+        `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
+        `${BASE_PROJECT_URL}/${wallGameId}/gameover.png`
+    ],
+    stack: ["three.js", "React"]
+}
+
 const fwdId = "fwd"
 export const fwd: Project = {
     id: fwdId,
@@ -292,6 +312,7 @@ export const routineReminder: Project = {
  
 // order of projects depends on ordering here
 export default {
+    wallGame,
     ewtr,
     golunch,
     fwd,

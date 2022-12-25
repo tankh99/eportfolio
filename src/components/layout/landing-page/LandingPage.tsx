@@ -1,4 +1,3 @@
-import { Image } from 'antd';
 import { StyleSheet, css } from 'aphrodite-jss';
 import React from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';

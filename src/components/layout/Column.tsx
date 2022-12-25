@@ -1,4 +1,3 @@
-import { Col } from 'antd';
 import React from 'react';
 
 interface P {
@@ -7,8 +6,8 @@ interface P {
 
 export default function Column(props: P){
     return(
-        <Col xs={24} md={12} lg={8}>
+        <div className='sm:col-span-24 md:col-span-12 lg:col-span-8'>
             {props.children}
-        </Col>
+        </div>
     )
 }

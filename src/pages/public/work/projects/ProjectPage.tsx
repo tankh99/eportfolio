@@ -11,7 +11,6 @@ import { Project } from '../../../../constants/projects';
 import "./ProjectPage.scss"
 import * as routes from '../../../../constants/routes';
 import TopLeftAction from 'components/layout/top-left-action/TopLeftAction';
-import { Col, Row, Tag } from 'antd';
 import ReactPlayer from 'react-player';
 import ImageGallery from 'react-image-gallery'
 import { AnyPtrRecord } from 'dns';
@@ -77,13 +76,13 @@ export default function ProjectPage(){
           <div>
             {
               videoLink ?
-                <div className='video-wrapper'>
+                <div className='video-wrapper flex justify-center'>
                     <a
                       className='close-video'
                       onClick={() => _toggleShowVideo(item.embedUrl)}
                     >
                     </a>
-                    <iframe width="560" height="315" 
+                    <iframe width="640" height="480" 
                     src={item.embedUrl} 
                     title="YouTube video player" 
                     frameBorder="0" 
@@ -166,12 +165,11 @@ export default function ProjectPage(){
                 <div dangerouslySetInnerHTML={description}/>
             </PageSection>
             <PageSection customStyles={sectionStyle} >
-                <h2>Technology Stack</h2>
+                <h2 className='mb-2'>Technology Stack</h2>
                 {/* <p>Technologies involved during this project</p> */}
                 {stack && stack.map((item: any, index: number) => {
-                    
                     return (
-                        <Tag color={""} key={index}>{item}</Tag>
+                        <span className='bg-slate-700 text-white rounded-full mr-2 py-2 px-4' key={index}>{item}</span>
                     )
                 })}
             </PageSection>

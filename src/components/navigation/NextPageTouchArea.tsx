@@ -29,10 +29,8 @@ export default function NextPageTouchArea(props: P){
     
     const toIndex = currentIndex + 1 != projects.length ? currentIndex + 1 : null;
     const toProject = projects[toIndex];
-    console.log(location)
     return (
-        <div>
-
+        <div className=''>
             {(navigate.length > 0) &&
                 <a onClick={() => navigate(-1)} 
                     className={`touch-area left ${props.direction ? `${props.direction}` : Direction.Horizontal}`}>
