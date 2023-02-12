@@ -9,7 +9,7 @@ interface P {
 export default function LandingPageAnimation(props: P){
     return (
         <motion.div 
-            className={css(styles.container)}
+            className={` ${css(styles.container)}`}
             initial="hidden"
             animate={props.animate ? "visible": "hidden"}
             variants={animations.container}>

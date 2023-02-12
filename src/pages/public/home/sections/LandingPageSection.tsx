@@ -42,7 +42,7 @@ export default function LandingPageSection(){
         <PageSection padded fitScreen centered
             customStyles={styles.landingPage}>
 
-            <div style={{width: "100%"}}>
+            <div className='' style={{width: "100%"}}>
             {/* <button onClick={() => {
                 setStartTyping(false)
                 setTimeout(() => {
@@ -50,11 +50,25 @@ export default function LandingPageSection(){
                     console.log(startTyping)
                 }, 1000)
             }}>Restart</button> */}
-                <div className='justify-between grid grid-cols-12 gap-4'>
+                <div className='justify-between grid grid-flow-row grid-cols-12 gap-4'>
+                    
                     <div className="col-span-12 md:col-span-8">
                         <div className=''>
-                            {finishTyping ? 
-                                <p style={{fontSize: '36px', lineHeight: '1.5em'}} dangerouslySetInnerHTML={typistHtml}></p>
+                            {finishTyping ? (
+                                <>
+                                    <p style={{fontSize: '36px', lineHeight: '1.5em'}} dangerouslySetInnerHTML={typistHtml}></p>
+                                    <motion.div
+                                        className="mt-8"
+                                        initial={"hidden"}
+                                        animate={finishTyping ? "visible" : "hidden"}
+                                        variants={fadeInAnimation.item}
+                                        onAnimationComplete={() => setTimeout(() => {setStartAnimation(true), 500})}>
+                                        <Link to={WORK_PATH} className="button">
+                                            View my work
+                                        </Link>
+                                    </motion.div>
+                                </>
+                                )
                                 :
                                 <>
                                     <TypeAnimation
@@ -69,7 +83,9 @@ export default function LandingPageSection(){
                                             }
                                         ]}/>
                                     {startTypingLine2 &&
-                                        <TypeAnimation
+                                    (
+                                        <>
+                                            <TypeAnimation
                                             wrapper="div"
                                             cursor={true}
                                             style={{fontSize: '36px', margin: "0 0"}}
@@ -80,6 +96,8 @@ export default function LandingPageSection(){
                                                     onFinishTyping()
                                                 }
                                             ]}/>
+                                        </>
+                                    )
                                     }
 
                                 </>
@@ -87,20 +105,10 @@ export default function LandingPageSection(){
 
                         </div>
                     </div>
-                    <div className="col-span-24 md:col-span-4">
+                    <div className="hidden md:block col-span-12 md:col-span-4">
                         <LandingPageAnimation animate={startAnimation} />
                     </div>
                 </div>
-                <motion.div
-                    className="mt-8"
-                    initial={"hidden"}
-                    animate={finishTyping ? "visible" : "hidden"}
-                    variants={fadeInAnimation.item}
-                    onAnimationComplete={() => setTimeout(() => {setStartAnimation(true), 500})}>
-                    <Link to={WORK_PATH} className="button">
-                        View my work
-                    </Link>
-                </motion.div>
             </div>
         </PageSection>
     )
