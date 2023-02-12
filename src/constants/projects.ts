@@ -80,7 +80,12 @@ export const wallGame: Project = {
     description: {__html: `Created as a side-project during the holiday to learn more about Three.js and 3D programming. 
         The premise of the game is meant to be simple, with simple player controls, objective and a basic
         score system. To ensure I had enough time to complete and polish the result, I constrained the 
-        features to a basic game.`
+        features to a basic game.
+        <br><br>
+        With each iteration, the game goes faster: the walls move faster, and so does the player. Keep up with the speed if you want to live
+        <br><br>
+        <a target="_blank" href="https://tankh99.github.io/react-threejs-wall-game/">Click here to try it out</a>
+        `
     },
     images: [
         `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
@@ -169,6 +174,7 @@ export const aivin: Project = {
     videoLink: "https://www.youtube.com/embed/s4evmpyF7Dg?rel=0",
     thumbnail: `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
     images: [
+        `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
         `${BASE_PROJECT_URL}/${aivinId}/aivin-welcome.jpg`,
         `${BASE_PROJECT_URL}/${aivinId}/aivin-chat-1.jpg`,
         `${BASE_PROJECT_URL}/${aivinId}/aivin-chat-2.jpg`,
