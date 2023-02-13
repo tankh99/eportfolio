@@ -12,6 +12,7 @@ export interface Project {
     achievements?: string,
     videoLink?: string,
     expanded?: boolean
+    videoThumbnail?: string
 }
 
 const BASE_URL = "/work" 
@@ -75,6 +76,7 @@ export const wallGame: Project = {
     id: wallGameId,
     title: "Wall Game",
     videoLink: "https://www.youtube.com/embed/MqJhxnR0Oxc",
+    videoThumbnail: `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
     thumbnail: `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
     tagline: "Run fast, avoid walls",
     description: {__html: `Created as a side-project during the holiday to learn more about Three.js and 3D programming. 
@@ -131,6 +133,7 @@ const golunchId = "golunch"
 export const golunch: Project = {
     id: golunchId,
     videoLink: `https://www.youtube.com/embed/q1AopaQmv00?rel=0`,
+    videoThumbnail: `${BASE_PROJECT_URL}/${golunchId}/golunch-youtube-ss.png`,
     thumbnail: `${BASE_PROJECT_URL}/${golunchId}/golunch.png`,
     images: [
         `${BASE_PROJECT_URL}/${golunchId}/golunch.png`,

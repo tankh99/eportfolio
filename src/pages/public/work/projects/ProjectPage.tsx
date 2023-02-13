@@ -32,13 +32,13 @@ export default function ProjectPage(){
         return project.id == params.id
     })[0]
     
-    const renderImages = (images: any, videoLink?: string) => {
+    const renderImages = (images: any, videoThumbnail: string, videoLink?: string) => {
         const galleryImagesArr: any = []
         let galleryImages: any = {}
         if(videoLink){
             const videoItem = {
-                original: require(`assets/images/projects/golunch/golunch-youtube-ss.png`),
-                thumbnail: require(`assets/images/projects/golunch/golunch-youtube-ss.png`),
+                original: require(`assets/images/${videoThumbnail}`),
+                thumbnail: require(`assets/images/${videoThumbnail}`),
                 embedUrl: videoLink,
                 renderItem: () => _renderVideo(videoItem)
             }
@@ -139,7 +139,7 @@ export default function ProjectPage(){
                     renderRightNav={(onClick, disabled) => {
                         return <CarouselNav className="right-nav" onClick={onClick} disabled={disabled}>	&#8594;</CarouselNav>
                     }}
-                    items={renderImages(images, videoLink)}
+                    items={renderImages(images, project.videoThumbnail, videoLink)}
                     />
                 {/* <Carousel 
                     renderItem={customRenderItem}
