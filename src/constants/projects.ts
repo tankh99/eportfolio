@@ -17,26 +17,6 @@ export interface Project {
 
 const BASE_URL = "/work" 
 
-// const chatAppId = "chat-app"
-// export const chatApp: Project= {
-//     id: chatAppId,
-//     title: "Chat App",
-//     thumbnail: `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-1.png`,
-//     slug: `${BASE_URL}/${chatAppId}`,
-//     description: {__html: `This was a simple project intended to facilitate my understanding of socket.io.`},
-//     images: [
-//         `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
-//         `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-1.png`,
-//         `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-2.png`
-//     ],
-//     stack: [
-//         "React",
-//         "Express",
-//         "Socket.io"
-//     ]
-    
-// }
-
 const ewtrId = "eye-want-to-rest"
 export const ewtr: Project= {
     id: ewtrId,
@@ -66,7 +46,8 @@ export const ewtr: Project= {
     ],
     stack: [
         "React Native",
-        "Expo"
+        "Expo",
+        "Typescript"
     ]
     
 }
@@ -93,7 +74,7 @@ export const wallGame: Project = {
         `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
         `${BASE_PROJECT_URL}/${wallGameId}/gameover.png`
     ],
-    stack: ["three.js", "React"]
+    stack: ["three.js", "React", "Typescript"]
 }
 
 const fwdId = "fwd"
@@ -165,7 +146,7 @@ export const golunch: Project = {
         This was a challenging project to tackle due to the vague requirements and nature of project. The client requested for mobile features, but wished for the product to be a PWA. Additionally, due to the difference in timezones between Finland and Singapore, we rarely could find a suitable time for both parties to discuss. So even if we had questions, we had to wait them off until we could talk to the client, and this lead to wasted effort and time working on features that the client did not wish for.
         `
     },
-    stack: ["React", "Express", "MySQL", "web3.js", "Truffle", "Ganache"],
+    stack: ["React", "Express", "MySQL", "web3.js", "Truffle", "Ganache", "Typescript"],
     challenges: {__html: `There was a lot of confusion during the initial phase of the project as the app that the client wanted pointed towards a native mobile app. Our group began learning React Native, but by the time the client clarified that he wanted a Progressive Web App, we had wasted 1-2 weeks. 
     <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `}
 }
@@ -200,7 +181,7 @@ export const aivin: Project = {
         The difficult part, however, lay in implemting the Call Screen. I had to very closely imitate iPhone's actual call screen, positioning the elements just nicely and ensuring every colour had the right tinge.
         Not only that, I had to ensure that text-to-speech was timed properly and that AIvin would respond accordingly when the user tapped on the End Call button.
     `},
-    stack: ["Expo", "React Native", "react-native-gifted-chat", "expo-av", "expo-speech"],
+    stack: ["Expo", "React Native", "Typescript", "react-native-gifted-chat", "expo-av", "expo-speech"],
     expanded: true
 }
 
@@ -306,11 +287,67 @@ export const routineReminder: Project = {
         the users can "start doing". The app will track the time passed and notify the user when the task is done. 
         Users are able to add checkpoints to each routine, which allows for dynamic routines to be created. 
     `},
-    stack: ["React Native", "Expo"]
+    stack: ["React Native", "Typescript", "Expo"]
 }
- 
+
+const harmonyQuestId = "harmony-quest";
+export const harmonyQuest: Project = {
+    id: harmonyQuestId,
+    thumbnail: `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-recording.png`,
+    videoLink: `https://youtu.be/eFXTjNZavCo`,
+    videoThumbnail: `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-recording.png`,
+    tagline: "Journey for Perfection",
+    images: [
+        `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-home.png`,
+        `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-recording.png`,
+        `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-leaderboard.png`,
+    ],
+    title: "Harmony Quest",
+    description: {__html: `
+        Worked with a team to ideate and develop a gamification platform for musical instrument practice, enabling users to assess and track their improvement.
+        <br><br>
+        Conducted extensive research on signal processing algorithms, with a focus on the Fast Fourier Transform, to evaluate the accuracy and rhythm of recordings with precision.
+        <br><br>
+        Demonstrated the ability to work efficiently under pressure and collaborate effectively with others to deliver a functioning application.
+    `},
+    stack: ["React"]
+}
+
+const orthogaitEcommerceId = "orthogait-ecommerce";
+export const orthogaitEcommerce: Project = {
+    id: orthogaitEcommerceId,
+    thumbnail: `${BASE_PROJECT_URL}/${orthogaitEcommerceId}/orthogait-product-1.png`,
+    tagline: "E-Commerce site for Orthogait Pte. Ltd",
+    images: [
+        `${BASE_PROJECT_URL}/${orthogaitEcommerceId}/orthogait-products-1.png`,
+        `${BASE_PROJECT_URL}/${orthogaitEcommerceId}/orthogait-product-1.png`,
+        `${BASE_PROJECT_URL}/${orthogaitEcommerceId}/orthogait-checkout-1.png`,
+        `${BASE_PROJECT_URL}/${orthogaitEcommerceId}/orthogait-checkout-2.png`,
+    ],
+    title: "Orthogait",
+    description: {__html: `
+    <h3 class="section-header">Context</h3>
+    Orthogait Pte. Ltd is an orthotics company that previously lacked an online commerce platform to sell their products to customers. Additionally, they could only provide to local customers. As a result, sales were lost.
+    
+    <h3 class="section-header">Solution</h3>
+    The Orthogait e-commerce application site is a user-friendly platform that allows customers to browse, select, and purchase custom orthotics and prosthetics with ease. 
+    It features a clear and intuitive interface, detailed product pages and multiple-variant selections, and a fast and secure checkout process. 
+    The site also includes helpful resources such as a contact page for customer support. 
+    <br><br>
+    A third-party content management system was integrated into the application to ensure that the customer could alter and modify the product catalog without ever touching or looking at code.
+    Product stock validation is handled almost entirely by the system. 
+    The site utilises delivery services to ship to different parts of the world, allowing the company to effectively reach customers beyond Singapore. 
+    <br><br>
+    Overall, the site provides a modern and efficient shopping experience for customers looking for high-quality orthotics and prosthetics and it results in increased company productivity and sales and customer satisfaction.
+    `},
+    stack: ["Next.js", "Typescript", "Stripe", "Nodemailer"]
+}
+
+
 // order of projects depends on ordering here
 export default {
+    orthogaitEcommerce,
+    harmonyQuest,
     wallGame,
     ewtr,
     golunch,

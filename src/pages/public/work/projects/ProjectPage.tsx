@@ -167,11 +167,13 @@ export default function ProjectPage(){
             <PageSection customStyles={sectionStyle} >
                 <h2 className='mb-2'>Technology Stack</h2>
                 {/* <p>Technologies involved during this project</p> */}
+                <div className='flex flex-wrap gap-4'>
                 {stack && stack.map((item: any, index: number) => {
                     return (
-                        <span className='bg-slate-700 text-white rounded-full mr-2 py-2 px-4' key={index}>{item}</span>
+                        <span className='bg-slate-700 text-white rounded-full py-2 px-4' key={index}>{item}</span>
                     )
                 })}
+                </div>
             </PageSection>
         </PageRoot>
     )
