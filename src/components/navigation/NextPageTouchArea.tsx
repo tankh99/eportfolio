@@ -40,7 +40,7 @@ export default function NextPageTouchArea(props: P){
                     </div>
                 </a>
             }
-            {toIndex && 
+            {toIndex ? 
                 <Link 
                     state={{
                         prevPath: getNameFromPath(location.pathname)
@@ -55,6 +55,7 @@ export default function NextPageTouchArea(props: P){
                         <div className="direction-icon-text">{getNameFromPath(toProject.slug)}</div>
                     </div>
                 </Link>
+            : <></>
             }
         </div>
     )

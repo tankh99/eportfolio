@@ -9,6 +9,5 @@ export function getSlug(path: string, breakpoint: string){
     const breakpointIndex = path.indexOf(breakpoint) + breakpoint.length ;
 
     const newPath = path.substring(breakpointIndex, path.length);
-    console.log(newPath);
     return newPath
 }
