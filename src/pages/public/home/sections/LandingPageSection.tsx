@@ -16,7 +16,7 @@ export default function LandingPageSection(){
 
     const introKey = "intro-done"
     
-    const [finishTyping, setFinishTyping] = useState(sessionGet(introKey))
+    const [finishTyping, setFinishTyping] = useState(false)
     const [startAnimation, setStartAnimation] = useState(false);
     const [startTypingLine2, setStartTypingLine2] = useState(false)
 
@@ -74,6 +74,7 @@ export default function LandingPageSection(){
                                     <TypeAnimation
                                         wrapper="div"
                                         cursor={false}
+                                        speed={80}
                                         style={{fontSize: '36px', lineHeight: '1.5em'}}
                                         sequence={[
                                             intro[0],
@@ -88,10 +89,11 @@ export default function LandingPageSection(){
                                             <TypeAnimation
                                             wrapper="div"
                                             cursor={true}
+                                            speed={80}
                                             style={{fontSize: '36px', margin: "0 0"}}
                                             sequence={[
                                                 intro[1],
-                                                1000,
+                                                500,
                                                 () => {
                                                     onFinishTyping()
                                                 }

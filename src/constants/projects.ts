@@ -326,17 +326,19 @@ export const orthogaitEcommerce: Project = {
     ],
     title: "Orthogait",
     description: {__html: `
-    <h3 class="section-header">Context</h3>
-    Orthogait Pte. Ltd is an orthotics company that previously lacked an online commerce platform to sell their products to customers. Additionally, they could only provide to local customers. As a result, sales were lost.
-    
-    <h3 class="section-header">Solution</h3>
+    Orthogait Pte. Ltd is an orthotics company that previously lacked an online commerce platform to sell their products to customers. However, they could only provide to local customers and
+    had little online presence. This E-commerce solution was built to expand their influence digitally
+    and improve sales.
+    <br><br>
     The Orthogait e-commerce application site is a user-friendly platform that allows customers to browse, select, and purchase custom orthotics and prosthetics with ease. 
     It features a clear and intuitive interface, detailed product pages and multiple-variant selections, and a fast and secure checkout process. 
     The site also includes helpful resources such as a contact page for customer support. 
     <br><br>
-    A third-party content management system was integrated into the application to ensure that the customer could alter and modify the product catalog without ever touching or looking at code.
-    Product stock validation is handled almost entirely by the system. 
-    The site utilises delivery services to ship to different parts of the world, allowing the company to effectively reach customers beyond Singapore. 
+    The site was built with the intention of being low-cost so, popular solutions like Shopify were not considered.
+    So I integrated cost-effective third-party content management and commerce providers into the application to ensure that the 
+    client could alter and modify the product catalog without looking at code/
+    Product stock validation is handled almost entirely by the system.
+    The site also integrates third-party delivery providers to ship to different parts of the world, allowing the company to effectively reach customers beyond just Singapore. 
     <br><br>
     Overall, the site provides a modern and efficient shopping experience for customers looking for high-quality orthotics and prosthetics and it results in increased company productivity and sales and customer satisfaction.
     `},

@@ -1,15 +1,9 @@
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import PageSection from '../../../../components/PageSection';
-import ProjectModal from '../../../../components/projects/ProjectModal';
-import {StyleSheet, css} from 'aphrodite-jss';
-import { slideInAnimation, slideUpAnimation } from '../../../../constants/animations';
-import * as projects from '../../../../constants/projects';
-import { useDispatch, useSelector } from 'react-redux';
-import { setActiveIndexAction } from '../../../../store/actions/projectActions';
-import Slider from 'react-slick';
+import { StyleSheet } from 'aphrodite-jss';
+import { useSelector } from 'react-redux';
 import "./ProjectsSection.scss";
-import {ProjectDisplay} from '../../../../components/projects/ProjectDisplay';
+import { ProjectDisplay } from '../../../../components/projects/ProjectDisplay';
 import { Delay } from '../../../../components/Delay';
 import { Link } from 'react-router-dom';
 import { getNameFromPath } from 'utils/utils';
