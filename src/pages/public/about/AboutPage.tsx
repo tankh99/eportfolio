@@ -12,7 +12,7 @@ export default function AboutPage(){
         setBackgroundHeight("400vh")    
     }, [])
     return (
-        <PageRoot padded>
+        <PageRoot padded className={"text-base md:px-24"}>
             <h1 className='text-4xl'>I design, develop and do it all again</h1>
             <h3 className='text-2xl'>Hi there, my name is name Khang Hou, also pronounced as kang · how.</h3>
             <p>I&apos;m a software developer with 4 years of experience. I mainly use the Typescript with the React ecosystem (React, React Native and Express.js), but have also learnt and used other languages such as: Angular, C#, Spring Boot, Python and HTML, CSS and JS.</p>
@@ -23,7 +23,7 @@ export default function AboutPage(){
             <br/>
             {/* TODO: Find out if anything wrong with layout of this */}
             <img
-                className=""
+                className="w-1/3"
                 src={require("../../../assets/images/baby-through-hole.jpeg")} />
             <p className="image-label">A picture I took around Aug 2016, during my time studying creative writing. It was actually more of a scriptwriting course, though</p>
         
@@ -37,6 +37,7 @@ export default function AboutPage(){
             </p>
             <div className="centered-image-container">
             <img
+                className='w-1/3'
                 src={require("../../../assets/images/projects/AIvin/aivin-chat-2.jpg")}/>
             <p className="image-label">Screenshot of AIvin, a submission for SurpriseHacks 2021</p>
             </div>

@@ -294,7 +294,7 @@ const harmonyQuestId = "harmony-quest";
 export const harmonyQuest: Project = {
     id: harmonyQuestId,
     thumbnail: `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-recording.png`,
-    videoLink: `https://youtu.be/eFXTjNZavCo`,
+    videoLink: `https://www.youtube.com/embed/eFXTjNZavCo`,
     videoThumbnail: `${BASE_PROJECT_URL}/${harmonyQuestId}/hq-recording.png`,
     tagline: "Journey for Perfection",
     images: [

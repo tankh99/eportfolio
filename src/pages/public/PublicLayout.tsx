@@ -28,7 +28,6 @@ import { ParallaxBanner } from 'react-scroll-parallax';
 export default function PublicLayout(){
     const location = useLocation();
     const navigate = useNavigate();
-    const backgroundHeight = useSelector((state: any) => state.ui.backgroundHeight)
 
     const [displayLocation, setDisplayLocation] = useState(location)
     const [transitionStage, setTransitionStage] = useState("fadeIn")
@@ -38,7 +37,6 @@ export default function PublicLayout(){
     }, [location, displayLocation])
     
     useEffect(() => {
-        console.log(location.pathname)
       if (location.pathname == "/") {
         navigate(paths.HOME_PATH)
       }
@@ -50,30 +48,23 @@ export default function PublicLayout(){
             <ParallaxBackground image={mediumSquares} intensity={0.2}/>
             <ParallaxBackground image={largeSquares} intensity={0.1}/> */}
             <Navbar/>
-            
-                {/* <CSSTransition 
-                    key={location.key}
-                    classNames="fade"
-                    timeout={300}> */}
-                    <div className={`main ${transitionStage}`} onAnimationEnd={() => {
-                        if(transitionStage == "fadeOut") {
-                            setTransitionStage("fadeIn")
-                            setDisplayLocation(location)
-                        }
-                    }}>
-                        <>
-                            <Routes location={displayLocation}>
-                                <Route path={paths.HOME_PATH} element={<HomePage/>}/>
-                                <Route path={paths.ABOUT_PATH} element={<AboutPage/>}/>
-                                <Route path={`${paths.WORK_PATH}/:id`} element={<ProjectPage/>}/>
-                                <Route path={paths.WORK_PATH} element={<WorkPage/>}/>
-                                <Route path={paths.CONTACT_PATH} element={<ContactPage/>}/>
-                                {/* <Route path="*" element={<Navigate to="/" replace/>}/> */}
-                            </Routes>
-                        </>
-                        {/* <Footer/> */}
-                    </div>
-                {/* </CSSTransition> */}
+                <div className={`main ${transitionStage}`} onAnimationEnd={() => {
+                    if(transitionStage == "fadeOut") {
+                        setTransitionStage("fadeIn")
+                        setDisplayLocation(location)
+                    }
+                }}>
+                    <>
+                        <Routes location={displayLocation}>
+                            <Route path={paths.HOME_PATH} element={<HomePage/>}/>
+                            <Route path={paths.ABOUT_PATH} element={<AboutPage/>}/>
+                            <Route path={`${paths.WORK_PATH}/:id`} element={<ProjectPage/>}/>
+                            <Route path={paths.WORK_PATH} element={<WorkPage/>}/>
+                            <Route path={paths.CONTACT_PATH} element={<ContactPage/>}/>
+                            {/* <Route path="*" element={<Navigate to="/" replace/>}/> */}
+                        </Routes>
+                    </>
+                </div>
         </>
     )
 }

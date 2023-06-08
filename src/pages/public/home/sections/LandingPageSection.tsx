@@ -16,7 +16,7 @@ export default function LandingPageSection(){
 
     const introKey = "intro-done"
     
-    const [finishTyping, setFinishTyping] = useState(false)
+    const [finishTyping, setFinishTyping] = useState(sessionGet(introKey))
     const [startAnimation, setStartAnimation] = useState(false);
     const [startTypingLine2, setStartTypingLine2] = useState(false)
 

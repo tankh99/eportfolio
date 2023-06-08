@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom'
+import {HashRouter as Router, Routes, Route, useLocation} from 'react-router-dom'
 import { HOME_PATH } from './constants/routes';
 import {Provider as StoreProvider} from 'react-redux'
 import {store} from './store/store';
