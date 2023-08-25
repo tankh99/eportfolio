@@ -4,6 +4,10 @@ Welcome to my E-Portfolio. My name is Khang Hou and I'm a software developer. I 
 Project URL: [https://tankh99.github.io/eportfolio]
 
 # Troubleshooting
+
+### Deployment Steps
+`npm run deploy`
+
 ### Getting react-responsive-carousel to support multimedia
 1. Run ```npm pack``` inside my fork of the react-responsive-carousel repository
 2. ```npm install``` the tar.gz that was created from ```npm pack``` command. 
