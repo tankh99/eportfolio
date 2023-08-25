@@ -69,7 +69,7 @@ function NavbarMenu({open, setOpen}: any) {
                     style={({isActive}) => isActive ? styles.active : undefined}
                     className={`link`}
                     onClick={() => setOpen(!open)}>
-                    <div className={linkButtonClass}>work</div>
+                    <div className={linkButtonClass}>projects</div>
                 </NavLink>
                 <NavLink to={ABOUT_PATH} 
                     style={({isActive}) => isActive ? styles.active : undefined}
