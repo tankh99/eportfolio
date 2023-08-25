@@ -64,3 +64,12 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+@layer utilities {
+  .text-6xl, .text-5xl, .text-4xl, .text-3xl, .text-2xl, .text-xl {
+    @apply leading-tight
+  }
+  p {
+    @apply leading-relaxed
+  }
+}

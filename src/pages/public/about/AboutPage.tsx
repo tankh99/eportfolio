@@ -14,7 +14,7 @@ export default function AboutPage(){
     return (
         <PageRoot padded className={"text-base md:px-24"}>
             <h1 className='text-4xl'>I design, develop and do it all again</h1>
-            <h3 className='text-2xl'>Hi there, my name is name Khang Hou, also pronounced as kang · how.</h3>
+            <h3 className='text-2xl mb-4'>Hi there, my name is name Khang Hou, also pronounced as kang · how.</h3>
             <p>I&apos;m a software developer with 4 years of experience. I mainly use the Typescript with the React ecosystem (React, React Native and Express.js), but have also learnt and used other languages such as: Angular, C#, Spring Boot, Python and HTML, CSS and JS.</p>
             <br/>
             <p>
@@ -23,7 +23,7 @@ export default function AboutPage(){
             <br/>
             {/* TODO: Find out if anything wrong with layout of this */}
             <img
-                className="w-1/3"
+                className="max-w-[720px]"
                 src={require("../../../assets/images/baby-through-hole.jpeg")} />
             <p className="image-label">A picture I took around Aug 2016, during my time studying creative writing. It was actually more of a scriptwriting course, though</p>
         
@@ -48,7 +48,7 @@ export default function AboutPage(){
                 <h3 className='text-2xl'>Education</h3>
                 <div className='mb-4'>
                     <div className='text-xl font-bold'>National University of Singapore (2022 - Present)</div>
-                    <p>Studying Computer Science. Current GPA: 4.75</p>
+                    <p>Bachelor of Computer Science</p>
                 </div>
                 <div className='text-xl font-bold'>Singapore Polytechnic (2016- 2020)</div>
                 <p>Studied Information Technology, achieved a 3.96 GPA and graduated with merit.</p>
@@ -67,8 +67,6 @@ export default function AboutPage(){
             </ul> */}
             <h3 className='text-2xl'>Want to work with me?</h3>
             <p>Contact me at khanghou99@gmail.com</p>
-            <p>Here&rsquo;s my <a href="../../../assets/resume.pdf" download>resume too</a>
-            </p>
         </PageRoot>
     )
 }
