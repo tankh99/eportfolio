@@ -156,6 +156,7 @@ const aivinId = "AIvin"
 export const aivin: Project = {
     id: aivinId,
     videoLink: "https://www.youtube.com/embed/s4evmpyF7Dg?rel=0",
+    videoThumbnail: `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
     thumbnail: `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,
     images: [
         `${BASE_PROJECT_URL}/${aivinId}/AIvin-logo.png`,

@@ -1,20 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { StyleSheet, css } from 'aphrodite-jss';
-import React, { useEffect, useState } from 'react';
+import { StyleSheet } from 'aphrodite-jss';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PageRoot from '../../../../components/layout/PageRoot';
 import NextPageTouchArea from '../../../../components/navigation/NextPageTouchArea';
 import PageSection from '../../../../components/PageSection';
-import { isMobileDevice, loadImage } from '../../../../constants/global';
+import { isMobileDevice } from '../../../../constants/global';
 import { Project } from '../../../../constants/projects';
 import "./ProjectPage.scss"
 import * as routes from '../../../../constants/routes';
 import TopLeftAction from 'components/layout/top-left-action/TopLeftAction';
-import ReactPlayer from 'react-player';
 import ImageGallery from 'react-image-gallery'
-import { AnyPtrRecord } from 'dns';
-
 
 export default function ProjectPage(){
 
@@ -28,11 +25,11 @@ export default function ProjectPage(){
         return state.projects
     });
 
-    const project = projectsReducer.projects.filter((project: any) => {
+    const project = projectsReducer.projects.filter((project: Project) => {
         return project.id == params.id
     })[0]
     
-    const renderImages = (images: any, videoThumbnail: string, videoLink?: string) => {
+    const renderImages = (images: string[], videoThumbnail: string, videoLink?: string) => {
         const galleryImagesArr: any = []
         let galleryImages: any = {}
         if(videoLink){
@@ -44,7 +41,7 @@ export default function ProjectPage(){
             }
             galleryImagesArr.push(videoItem)
         }
-        images.map((image: any, index: number) => {
+        images.map((image: string, index: number) => {
             galleryImagesArr.push(
                 {
                     original: require(`assets/images/${image}`),
@@ -53,7 +50,6 @@ export default function ProjectPage(){
             )
         })
         galleryImages = {...[galleryImagesArr]}[0]
-        console.log(galleryImages)
         return galleryImages
     }
     const _toggleShowVideo = (url:string) => {
@@ -85,7 +81,6 @@ export default function ProjectPage(){
                     <iframe width="640" height="480" 
                     src={item.embedUrl} 
                     title="YouTube video player" 
-                    frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen></iframe>
                     {/* <iframe
@@ -116,7 +111,7 @@ export default function ProjectPage(){
         );
       }
     
-    const {title, tagline, description, images, stack, challenges, videoLink}: Project = project
+    const {title, tagline, description, images, stack, videoLink}: Project = project
     const sectionStyle = isMobileDevice() ? styles.mobileProjectPageSection : styles.desktopProjectPageSection
     return (
         <PageRoot>
@@ -168,7 +163,7 @@ export default function ProjectPage(){
                 <h2 className='mb-2'>Technology Stack</h2>
                 {/* <p>Technologies involved during this project</p> */}
                 <div className='flex flex-wrap gap-4'>
-                {stack && stack.map((item: any, index: number) => {
+                {stack && stack.map((item: string, index: number) => {
                     return (
                         <span className='bg-slate-700 text-white rounded-full py-2 px-4' key={index}>{item}</span>
                     )
