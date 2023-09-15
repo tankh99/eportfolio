@@ -29,7 +29,7 @@ export const ProjectDisplay = (props: P) => {
     
     return (
         <motion.div
-            className={"project relative"}
+            className={"project relative max-h-[200px]"}
             initial="hidden"
             animate={image ? "visible" : "hidden"}
             // TODO: FIx the slideup animation not starting with opacity 0
