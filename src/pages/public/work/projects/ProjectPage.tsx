@@ -12,6 +12,7 @@ import "./ProjectPage.scss"
 import * as routes from '../../../../constants/routes';
 import TopLeftAction from 'components/layout/top-left-action/TopLeftAction';
 import ImageGallery from 'react-image-gallery'
+import { GithubOutlined } from '@ant-design/icons';
 
 export default function ProjectPage(){
 
@@ -169,6 +170,9 @@ export default function ProjectPage(){
                     )
                 })}
                 </div>
+            </PageSection>
+            <PageSection customStyles={sectionStyle} >
+                {project.githubLink != null ? <div className='flex items-center gap-x-2'><GithubOutlined /> <a href={project.githubLink}>Github Repo</a></div> : ""}
             </PageSection>
         </PageRoot>
     )

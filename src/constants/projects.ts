@@ -11,6 +11,7 @@ export interface Project {
     challenges?: any,
     achievements?: string,
     videoLink?: string,
+    githubLink?: string;
     expanded?: boolean
     videoThumbnail?: string
 }
@@ -21,7 +22,7 @@ const ewtrId = "eye-want-to-rest"
 export const ewtr: Project= {
     id: ewtrId,
     title: "Eye Want to Rest",
-    thumbnail: `${BASE_PROJECT_URL}/${ewtrId}/app-feature-graphic.png`,
+    thumbnail: `${BASE_PROJECT_URL}/${ewtrId}/app-logo-512x512.png`,
     description: {__html: `
         Eye Want to Rest helps your eyes work the way it's intended to. Eye Want to Rest gives your eyes the time to rest it needs from looking at our screens all day long and reduces occurrence of dry eyes
 
@@ -36,6 +37,7 @@ export const ewtr: Project= {
 
 
     `},
+    githubLink: "https://github.com/tankh99/eye-want-to-rest",
     images: [
         `${BASE_PROJECT_URL}/${ewtrId}/app-logo-512x512.png`,
         `${BASE_PROJECT_URL}/${ewtrId}/ewtr-1.png`,
@@ -74,6 +76,7 @@ export const wallGame: Project = {
         `${BASE_PROJECT_URL}/${wallGameId}/game.png`,
         `${BASE_PROJECT_URL}/${wallGameId}/gameover.png`
     ],
+    githubLink: "https://github.com/tankh99/react-threejs-wall-game",
     stack: ["three.js", "React", "Typescript"]
 }
 
@@ -102,11 +105,12 @@ export const fwd: Project = {
         `E-Form Designer is a web application built in Vue.js, Spring Boot and MongoDB that aims to streamline form creation and collection, much like FormSG. Companies can create their own 
         forms for internal use and collect the data with ease, no matter the type of data they wish to collect. 
         As form generation is dynamic, users can create forms using drag and drop components, which creates the corresponding entry inside the database. Data entered into the created form will henceforth be saved into that created document.
-        This was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner, Natalie designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using SCRUM framework.
+        This was a pair project that was created during my internship at CSIT (Centre for Strategic Infocomm Technologies). It was a pair project, so while I focused on wiring the backend with Spring Boot, my partner designed the frontend using Vue.js. With GitHub's project management system, we balanced our workload using the SCRUM framework.
         <br/><br/>
-        The project was initially a 2-month project and had workflows included in its project specifications, however, was cut down so that we could help work on applications that CSIT were currently using. We consistently engaged in discussions improve on certain features and consulted our mentor on topics we were unsure of.`
+        The project was initially a 2-month project and had workflows included in its project specifications, however, was cut down so that we could help work on in-house modules that CSIT were currently using. We consistently engaged in discussions improve on certain features and consulted our mentor on topics we were unsure of.`
     },
-    stack: ["Vue.js", "Spring Boot", "MongoDB"]
+    stack: ["Vue.js", "Spring Boot", "MongoDB"],
+    githubLink: "https://github.com/tankh99/fwd-ms-app"
     
 }
 
@@ -148,7 +152,8 @@ export const golunch: Project = {
     },
     stack: ["React", "Express", "MySQL", "web3.js", "Truffle", "Ganache", "Typescript"],
     challenges: {__html: `There was a lot of confusion during the initial phase of the project as the app that the client wanted pointed towards a native mobile app. Our group began learning React Native, but by the time the client clarified that he wanted a Progressive Web App, we had wasted 1-2 weeks. 
-    <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `}
+    <br/><br/>Additionally, there was the pressure of leading my groupmates and planning the to-do list of my groupmates. All of these were new experiences for me and I `},
+    githubLink: "https://github.com/tankh99/golunch"
 }
 
 
@@ -183,6 +188,7 @@ export const aivin: Project = {
         Not only that, I had to ensure that text-to-speech was timed properly and that AIvin would respond accordingly when the user tapped on the End Call button.
     `},
     stack: ["Expo", "React Native", "Typescript", "react-native-gifted-chat", "expo-av", "expo-speech"],
+    githubLink: "https://github.com/tankh99/aIvin",
     expanded: true
 }
 
@@ -228,7 +234,8 @@ export const timezonify: Project = {
         <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/timezonify/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">Firefox</a><br/>
         <a target="_blank" href="https://chrome.google.com/webstore/detail/timezonify/blaebhbhlcdbeiepibjlnpcphmcokjpo">Google</a>
     `},
-    stack: ["Web Extension API", "Javascript", "Timezone & Date Parsing"]
+    stack: ["Web Extension API", "Javascript", "Timezone & Date Parsing"],
+    githubLink: "https://github.com/tankh99/timezonify-extension"
 }
 
 const mowbraycounterId = "mowbray-counter"
@@ -263,11 +270,10 @@ export const translinerWebsite: Project = {
     description: {__html: `
         This website was created for Transliner Group, a company where I worked for a short while before I enlisted into the army.
         It was created with Angular and was meant to replace the old website, which was slow and limited in its capabilities. Additionally,
-        the website was meant to be connected to the company's backend, which I also helped upgrade from WebForms to ASP.NET Web APIs and 
-        using Bootstrap and jQuery.   
+        the website was meant to be connected to the company's backend, which I also helped upgrade from WebForms to ASP.NET Core, using Bootstrap and jQuery for increased interactivity.   
     `
     },
-    stack:["Angular", "ASP.NET", "Web API", "HTML", "Bootstrap", "jQuery"]
+    stack:["Angular", "ASP.NET Core", "Bootstrap", "jQuery"]
 }
 
 const routineReminderId = "routine-reminder";
@@ -311,7 +317,8 @@ export const harmonyQuest: Project = {
         <br><br>
         Demonstrated the ability to work efficiently under pressure and collaborate effectively with others to deliver a functioning application.
     `},
-    stack: ["React"]
+    stack: ["React"],
+    githubLink: "https://github.com/NUS-Hack-Roll2023-396L/music-game-frontend"
 }
 
 const orthogaitEcommerceId = "orthogait-ecommerce";
@@ -343,7 +350,24 @@ export const orthogaitEcommerce: Project = {
     <br><br>
     Overall, the site provides a modern and efficient shopping experience for customers looking for high-quality orthotics and prosthetics and it results in increased company productivity and sales and customer satisfaction.
     `},
-    stack: ["Next.js", "Typescript", "Stripe", "Nodemailer"]
+    stack: ["Next.js", "Typescript", "Stripe", "Nodemailer", "Commerce.js", "EasyParcel"]
+}
+
+const chatAppId = "chat";
+export const chatApp: Project = {
+    id: chatAppId,
+    thumbnail: `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
+    tagline: "E-Commerce site for Orthogait Pte. Ltd",
+    images: [
+        `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
+        `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-2.png`,
+    ],
+    title: "Orthogait",
+    description: {__html: `
+    A simple chat project to test how communication between multiple parties over the internet works. Features a simple chatroom that allows for multi-directional communication. Utilises a simple React frontend and web sockets on the Express backend to enable communication between parties. 
+    `},
+    stack: ["React", "Express", "Socket.io"],
+    githubLink: ""
 }
 
 
@@ -358,5 +382,6 @@ export default {
     timezonify,
     aivin,
     routineReminder,
+    chatApp,
     mowbraycounter
 }
