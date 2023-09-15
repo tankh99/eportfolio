@@ -353,21 +353,21 @@ export const orthogaitEcommerce: Project = {
     stack: ["Next.js", "Typescript", "Stripe", "Nodemailer", "Commerce.js", "EasyParcel"]
 }
 
-const chatAppId = "chat";
+const chatAppId = "chat-app";
 export const chatApp: Project = {
     id: chatAppId,
     thumbnail: `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
-    tagline: "E-Commerce site for Orthogait Pte. Ltd",
+    tagline: "Chatroom Website",
     images: [
         `${BASE_PROJECT_URL}/${chatAppId}/chat-app-homepage-1.png`,
         `${BASE_PROJECT_URL}/${chatAppId}/chat-app-chatpage-2.png`,
     ],
-    title: "Orthogait",
+    title: "Chat App",
     description: {__html: `
     A simple chat project to test how communication between multiple parties over the internet works. Features a simple chatroom that allows for multi-directional communication. Utilises a simple React frontend and web sockets on the Express backend to enable communication between parties. 
     `},
     stack: ["React", "Express", "Socket.io"],
-    githubLink: ""
+    githubLink: "https://github.com/tankh99/chat-app"
 }
 
 
