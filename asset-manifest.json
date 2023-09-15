@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eportfolio/static/css/main.9b2bf0a8.css",
-    "main.js": "/eportfolio/static/js/main.ced6b119.js",
+    "main.css": "/eportfolio/static/css/main.2adbbc60.css",
+    "main.js": "/eportfolio/static/js/main.197cf9f8.js",
     "static/js/496.bd114868.chunk.js": "/eportfolio/static/js/496.bd114868.chunk.js",
     "static/media/wall-game-demo.mov": "/eportfolio/static/media/wall-game-demo.a90995ad648a26af0973.mov",
     "static/media/hq-demo.mov": "/eportfolio/static/media/hq-demo.8ea56916befae85ee113.mov",
@@ -103,12 +103,12 @@
     "static/media/aivin-welcome.jpg": "/eportfolio/static/media/aivin-welcome.14ccbc8a2877261f648a.jpg",
     "static/media/routine-reminder-routines.jpg": "/eportfolio/static/media/routine-reminder-routines.7684d27956c10d9bf6f7.jpg",
     "index.html": "/eportfolio/index.html",
-    "main.9b2bf0a8.css.map": "/eportfolio/static/css/main.9b2bf0a8.css.map",
-    "main.ced6b119.js.map": "/eportfolio/static/js/main.ced6b119.js.map",
+    "main.2adbbc60.css.map": "/eportfolio/static/css/main.2adbbc60.css.map",
+    "main.197cf9f8.js.map": "/eportfolio/static/js/main.197cf9f8.js.map",
     "496.bd114868.chunk.js.map": "/eportfolio/static/js/496.bd114868.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b2bf0a8.css",
-    "static/js/main.ced6b119.js"
+    "static/css/main.2adbbc60.css",
+    "static/js/main.197cf9f8.js"
   ]
 }
