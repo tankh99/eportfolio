@@ -374,14 +374,14 @@ export const chatApp: Project = {
 // order of projects depends on ordering here
 export default {
     orthogaitEcommerce,
-    harmonyQuest,
-    wallGame,
     ewtr,
-    golunch,
     fwd,
+    golunch,
     timezonify,
+    wallGame,
     aivin,
-    routineReminder,
     chatApp,
+    harmonyQuest,
+    routineReminder,
     mowbraycounter
 }
